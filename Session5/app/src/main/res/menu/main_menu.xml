@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/open_drawer"
+        android:title="Open drawer"
+        app:showAsAction="always"></item>
+
+    <item
+        android:id="@+id/item_setting"
+        android:title="@string/setting_title"></item>
+
+    <item
+        android:id="@+id/item_privacy"
+        android:title="@string/privacy_title">
+
+    </item>
+
+    <item
+        android:id="@+id/item_help"
+        android:title="@string/help_title"></item>
+
+
+</menu>
