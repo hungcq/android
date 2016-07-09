@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+tools:context="raijin.session4.MainActivity">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Reminder name"
+        android:id="@+id/edittext"/>
+    <Spinner
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittext"
+        android:id="@+id/spinner1"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/edittext2"></Spinner>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittext"
+        android:layout_alignParentRight="true"
+        android:hint="abcafwefasbvxb"
+        android:id="@id/edittext2"></EditText>
+    <Button
+        android:layout_width="0dp"
+        android:layout_alignStart="@id/edittext2"
+        android:layout_alignLeft="@id/edittext"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:layout_below="@id/edittext2"
+        android:layout_alignParentRight="true"/>
+
+
+
+</RelativeLayout>
