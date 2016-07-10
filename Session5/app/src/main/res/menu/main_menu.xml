@@ -5,7 +5,8 @@
     <item
         android:id="@+id/open_drawer"
         android:title="Open drawer"
-        app:showAsAction="always"></item>
+        app:showAsAction="always"
+        android:icon="@mipmap/icon"></item>
 
     <item
         android:id="@+id/item_setting"
@@ -13,9 +14,7 @@
 
     <item
         android:id="@+id/item_privacy"
-        android:title="@string/privacy_title">
-
-    </item>
+        android:title="@string/privacy_title"></item>
 
     <item
         android:id="@+id/item_help"

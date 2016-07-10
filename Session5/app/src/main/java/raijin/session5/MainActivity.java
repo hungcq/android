@@ -11,10 +11,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MyAdapter myAdapter;
+//    private MyAdapter myAdapter;
     private DrawerLayout drawerLayout;
     boolean flag = true;
     @Override
@@ -22,11 +26,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView listView = (ListView) findViewById(R.id.drawer_list);
-        myAdapter =  new MyAdapter(this,R.layout.list_item);
-        myAdapter.add("Inbox");
-        myAdapter.add("Sent");
-        listView.setAdapter(myAdapter);
+//        myAdapter =  new MyAdapter(this,R.layout.list_item);
+//        myAdapter.add("Inbox");
+//        myAdapter.add("Sent");
+//        listView.setAdapter(myAdapter);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        List<String> places = new ArrayList<>();
+        places.add("Hanoi");
+        places.add("Haiphong");
+        places.add("Another planet");
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,R.layout.drawer_list_item,places);
+        listView.setAdapter(adapter);
     }
 
     @Override
@@ -57,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    class MyAdapter extends ArrayAdapter<String> {
-        public MyAdapter(Context context, int resource) {
-            super(context,resource);
-        }
-    }
+//    class MyAdapter extends ArrayAdapter<String> {
+//        public MyAdapter(Context context, int resource) {
+//            super(context,resource);
+//        }
+//    }
 }
