@@ -26,20 +26,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent haiphongIntent = new Intent(this,HaiPhongActivity.class);
-        Intent namdinhIntent = new Intent(this,NamDinhActivity.class);
-        Intent hanamIntent = new Intent(this,HaNamActivity.class);
+        Intent intent = new Intent(this,DetailsActivity.class);
+        Bundle bundle = new Bundle();
         switch (v.getId()) {
             case R.id.haiphong: {
-                startActivity(haiphongIntent);
+                bundle.putString("name","Hải Phòng");
+                bundle.putInt("imageResource",R.mipmap.rainy);
+                bundle.putString("tem","29");
+                intent.putExtras(bundle);
+                startActivity(intent);
                 break;
             }
             case R.id.namdinh: {
-                startActivity(namdinhIntent);
+                bundle.putString("name","Nam Định");
+                bundle.putInt("imageResource",R.mipmap.partly_sunny);
+                bundle.putString("tem","35");
+                intent.putExtras(bundle);
+                startActivity(intent);
                 break;
             }
             case R.id.hanam: {
-                startActivity(hanamIntent);
+                bundle.putString("name","Hà Nam");
+                bundle.putInt("imageResource",R.mipmap.snowy);
+                bundle.putString("tem","-10");
+                intent.putExtras(bundle);
+                startActivity(intent);
                 break;
             }
         }

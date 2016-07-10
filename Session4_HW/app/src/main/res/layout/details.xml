@@ -28,10 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/black"></View>
-    <TextView
+    <TextView android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hải Phòng"
         android:textColor="#FFFFFF"
         android:layout_gravity="center"
         android:textSize="30dp"
@@ -55,10 +54,9 @@
             android:textColor="#FFFFFF"/>
     </LinearLayout>
 
-    <ImageView
+    <ImageView android:id="@+id/main_weather"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:src="@mipmap/rainy"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"/>
     <LinearLayout
@@ -70,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginRight="50dp">
+            android:layout_marginRight="45dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,13 +79,12 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:src="@mipmap/tem" />
-                <TextView
+                <TextView android:id="@+id/tem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="29°C"
                     android:textSize="30dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
 

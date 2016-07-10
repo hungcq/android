@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".HaiPhongActivity">
+        <activity android:name=".DetailsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,21 +24,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NamDinhActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".HaNamActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
