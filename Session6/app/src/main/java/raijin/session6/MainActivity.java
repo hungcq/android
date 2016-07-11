@@ -36,6 +36,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this,"abc",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,listContactName.get(i),Toast.LENGTH_SHORT).show();
     }
 }

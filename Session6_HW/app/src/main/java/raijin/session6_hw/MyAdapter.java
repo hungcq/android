@@ -14,24 +14,24 @@ import java.util.List;
  */
 public class MyAdapter extends BaseAdapter {
 
-    private List<String> listContact;
+    private List<PersonInfo> listEmployee;
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public MyAdapter(List<String> listContact, Context context) {
-        this.listContact = listContact;
+    public MyAdapter(List<PersonInfo> listEmployee, Context context) {
+        this.listEmployee = listEmployee;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(this.context);
     }
 
     @Override
     public int getCount() {
-        return listContact.size();
+        return listEmployee.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return listContact.get(position);
+        return listEmployee.get(position);
     }
 
     @Override
@@ -43,8 +43,12 @@ public class MyAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         View view = layoutInflater.inflate(R.layout.item_on_list,null);
         if(view != null) {
-            TextView txtContactName = (TextView) view.findViewById(R.id.name_text);
-            txtContactName.setText(listContact.get(position));
+            TextView nameText = (TextView) view.findViewById(R.id.name_text);
+            TextView ageText = (TextView) view.findViewById(R.id.age_text);
+            TextView phoneText = (TextView) view.findViewById(R.id.phone_text);
+            nameText.setText(listEmployee.get(position).getName());
+            ageText.setText(listEmployee.get(position).getPhone());
+            phoneText.setText(listEmployee.get(position).getPhone());
         }
         return view;
     }
