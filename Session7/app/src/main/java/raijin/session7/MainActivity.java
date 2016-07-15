@@ -34,16 +34,16 @@ public class MainActivity extends AppCompatActivity {
 
     class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
-        Context mcontext;
+        Context mContext;
 
         public MyAdapter(Context context) {
             super();
-            mcontext = context;
+            mContext = context;
         }
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(mcontext).inflate(R.layout.personel_item,parent,false);
+            View view = LayoutInflater.from(mContext).inflate(R.layout.personel_item,parent,false);
             MyViewHolder viewHolder = new MyViewHolder(view);
             return viewHolder;
         }
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(mcontext,"I am " + mPersonelNames[position],Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext,"I am " + mPersonelNames[position],Toast.LENGTH_SHORT).show();
                 }
             });
         }
