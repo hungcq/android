@@ -1,3 +1,0 @@
-CHANGED,C:\Users\Admin\Documents\android\Session9_HW\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\raijin\session9_hw\MyAdapter$override.class
-CHANGED,C:\Users\Admin\Documents\android\Session9_HW\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\raijin\session9_hw\PersonInfo$override.class
-CHANGED,C:\Users\Admin\Documents\android\Session9_HW\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
