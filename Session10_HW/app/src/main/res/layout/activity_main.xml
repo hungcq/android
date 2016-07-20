@@ -10,11 +10,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="raijin.session10_hw.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/holo_blue_dark"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_marginBottom="30dp"></android.support.v7.widget.Toolbar>
+
     <EditText android:id="@+id/location_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your location"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:layout_below="@id/toolbar"/>
     <TextView android:id="@+id/show_on_map_text"
         android:layout_width="200dp"
         android:layout_height="wrap_content"

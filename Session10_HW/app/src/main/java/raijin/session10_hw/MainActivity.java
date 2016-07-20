@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Location App");
+        setSupportActionBar(toolbar);
         showOnMapButton = (Button) findViewById(R.id.show_on_map_button);
         drivingButton = (Button) findViewById(R.id.driving_button);
         walkingButton = (Button) findViewById(R.id.walking_button);

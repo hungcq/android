@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 //        myAdapter.add("Inbox");
 //        myAdapter.add("Sent");
 //        listView.setAdapter(myAdapter);
+        setTitle("DrawerLayout App");
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         List<String> places = new ArrayList<>();
         places.add("Hanoi");
