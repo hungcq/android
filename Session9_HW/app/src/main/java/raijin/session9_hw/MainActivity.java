@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button saveButton;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
+    public static final String NAME_KEY = "name";
+    public static final String AGE_KEY = "age";
+    public static final String PHONE_KEY = "phone";
+    public static final String ADDRESS_KEY = "address";
+    public static final String GENDER_KEY = "gender";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +53,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         !addressEditText.getText().toString().isEmpty()) {
                     int radioButtonCheckedId = radioGroup.getCheckedRadioButtonId();
                     radioButton = (RadioButton) findViewById(radioButtonCheckedId);
-                    bundle.putString("gender",radioButton.getText().toString());
-                    bundle.putString("name",nameEditText.getText().toString());
-                    bundle.putString("age",ageEditText.getText().toString());
-                    bundle.putString("phone",phoneEditText.getText().toString());
-                    bundle.putString("address",addressEditText.getText().toString());
+                    bundle.putString(GENDER_KEY,radioButton.getText().toString());
+                    bundle.putString(NAME_KEY,nameEditText.getText().toString());
+                    bundle.putString(AGE_KEY,ageEditText.getText().toString());
+                    bundle.putString(PHONE_KEY,phoneEditText.getText().toString());
+                    bundle.putString(ADDRESS_KEY,addressEditText.getText().toString());
                     intent.putExtras(bundle);
                     startActivity(intent);
                 } else {

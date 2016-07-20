@@ -27,11 +27,11 @@ public class DetailFragment extends Fragment {
         TextView phoneText = (TextView)view.findViewById(R.id.fr_phonetext);
         TextView addressText = (TextView)view.findViewById(R.id.fr_addresstext);
         TextView genderText = (TextView)view.findViewById(R.id.fr_gendertext);
-        nameText.setText("Name: " + bundle.getString("name"));
-        ageText.setText("Age: " + bundle.getString("age"));
-        phoneText.setText("Phone: " + bundle.getString("phone"));
-        addressText.setText("Address: " + bundle.getString("address"));
-        genderText.setText("Gender: " + bundle.getString("gender"));
+        nameText.setText("Name: " + bundle.getString(MainActivity.NAME_KEY));
+        ageText.setText("Age: " + bundle.getString(MainActivity.AGE_KEY));
+        phoneText.setText("Phone: " + bundle.getString(MainActivity.PHONE_KEY));
+        addressText.setText("Address: " + bundle.getString(MainActivity.ADDRESS_KEY));
+        genderText.setText("Gender: " + bundle.getString(MainActivity.GENDER_KEY));
         return view;
     }
 
