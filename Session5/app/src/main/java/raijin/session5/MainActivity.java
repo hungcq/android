@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
 //        myAdapter.add("Inbox");
 //        myAdapter.add("Sent");
 //        listView.setAdapter(myAdapter);
-        setTitle("DrawerLayout App");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        toolbar.setTitle("DrawerLayout App");
+        setSupportActionBar(toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         List<String> places = new ArrayList<>();
         places.add("Hanoi");
