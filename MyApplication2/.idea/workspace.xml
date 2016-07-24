@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad4c1c02-bc5c-4b63-a02a-80833ad4e87a" name="Default" comment="added ss11">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Session11/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Session7_HW/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Session7_HW/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Session9_HW/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Session9_HW/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Session9_HW/app/src/main/java/raijin/session9_hw/DetailFragment.java" afterPath="$PROJECT_DIR$/../Session9_HW/app/src/main/java/raijin/session9_hw/DetailFragment.java" />
     </list>
     <ignored path="MyApplication2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +27,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/raijin/session11/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24354243">
-              <caret line="11" column="18" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.6900369">
+              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -1912,6 +1901,13 @@
       <option name="number" value="Default" />
       <updated>1469356077611</updated>
     </task>
+    <task id="LOCAL-00001" summary="added ss11">
+      <created>1469356483705</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1469356483705</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1959,6 +1955,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="added ss11" />
     <option name="LAST_COMMIT_MESSAGE" value="added ss11" />
   </component>
@@ -1977,8 +1975,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/raijin/session11/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24354243">
-          <caret line="11" column="18" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.6900369">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
           <folding />
         </state>
       </provider>
