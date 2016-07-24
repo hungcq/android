@@ -34,5 +34,4 @@ public class DetailFragment extends Fragment {
         genderText.setText("Gender: " + bundle.getString(MainActivity.GENDER_KEY));
         return view;
     }
-
 }
