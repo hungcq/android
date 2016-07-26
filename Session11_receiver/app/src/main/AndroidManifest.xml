@@ -19,9 +19,13 @@
         <receiver android:name=".MainActivity$MyBroadCastReceiver">
             <intent-filter>
                 <action android:name="abc" />
-                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".ResultActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package raijin.session11_receiver;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -27,14 +28,29 @@ public class MainActivity extends AppCompatActivity {
             switch (intent.getAction()) {
                 case "abc":
                     String content = intent.getStringExtra("text");
-                    Toast.makeText(context,content, Toast.LENGTH_SHORT).show();
-                    break;
-                case Intent.ACTION_AIRPLANE_MODE_CHANGED:
                     Notification.Builder builder = new Notification.Builder(context)
                             .setSmallIcon(R.mipmap.ic_launcher)
                             .setContentTitle("Warning!")
-                            .setContentText("Air Plane Mode Changed!");
+                            .setContentText(content);
                     NotificationManager notificationManager = (NotificationManager)
+                            context.getSystemService(context.NOTIFICATION_SERVICE);
+                    Intent resultIntent = new Intent(context,new ResultActivity().getClass());
+                    resultIntent.putExtra("content",content);
+                    PendingIntent resultPendingIntent = PendingIntent.getActivity(
+                                    context,
+                                    0,
+                                    resultIntent,
+                                    PendingIntent.FLAG_UPDATE_CURRENT
+                            );
+                    builder.setContentIntent(resultPendingIntent);
+                    notificationManager.notify(0,builder.build());
+                    break;
+                case Intent.ACTION_AIRPLANE_MODE_CHANGED:
+                    builder = new Notification.Builder(context)
+                            .setSmallIcon(R.mipmap.ic_launcher)
+                            .setContentTitle("Warning!")
+                            .setContentText("Air Plane Mode Changed!");
+                    notificationManager = (NotificationManager)
                             context.getSystemService(context.NOTIFICATION_SERVICE);
                     notificationManager.notify(0,builder.build());
 
