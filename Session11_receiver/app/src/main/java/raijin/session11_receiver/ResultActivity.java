@@ -35,6 +35,6 @@ public class ResultActivity extends AppCompatActivity {
         super.onResume();
         setContentView(R.layout.activity_result);
         TextView textView = (TextView) findViewById(R.id.text_view);
-        textView.setText(getIntent().getStringExtra("content"));
+        textView.setText(MainActivity.text);
     }
 }

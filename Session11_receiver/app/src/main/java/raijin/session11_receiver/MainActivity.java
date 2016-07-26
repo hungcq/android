@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static String text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             switch (intent.getAction()) {
                 case "abc":
                     String content = intent.getStringExtra("text");
+                    text = content;
                     Notification.Builder builder = new Notification.Builder(context)
                             .setSmallIcon(R.mipmap.ic_launcher)
                             .setContentTitle("Warning!")
