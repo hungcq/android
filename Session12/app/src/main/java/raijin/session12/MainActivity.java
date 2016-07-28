@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(isNetworkConnected()) {
                     DownloadAsyncTask downloadAsyncTask = new DownloadAsyncTask();
-                    downloadAsyncTask.execute("https://upload.wikimedia.org/wikipedia/en/9/9f/Star_Trek_movie_logo_2009.jpg");
+                    downloadAsyncTask.execute("https://static.pexels.com/photos/479/landscape-nature-sunset-trees.jpg");
                 }
             }
         });
