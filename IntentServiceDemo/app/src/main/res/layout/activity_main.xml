@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    tools:context="com.example.mrbom.intentservicedemo.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter a:"
+        android:textColor="#212121"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_number_a"
+        android:textColor="#212121"
+        android:textSize="16sp"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter b:"
+        android:textColor="#212121"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_number_b"
+        android:textColor="#212121"
+        android:textSize="16sp"
+        android:inputType="number"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="16sp"
+            android:id="@+id/btn_operator_01"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="16sp"
+            android:id="@+id/btn_operator_02"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textSize="16sp"
+            android:id="@+id/btn_operator_03"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="16sp"
+            android:id="@+id/btn_operator_04"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#212121"
+        android:id="@+id/txt_operation"
+        android:layout_gravity="center"
+        android:text=""
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#212121"
+        android:id="@+id/txt_result"
+        android:layout_gravity="center"
+        android:text=""
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="16sp"
+        android:id="@+id/btn_submit"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>

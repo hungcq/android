@@ -1,8 +1,12 @@
 package raijin.session4_hw;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -16,6 +20,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        IntentFilter intentFilter = new IntentFilter(MyReceiver.RESPONE_ACTION);
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+
+        MyReceiver receiver = new MyReceiver();
+        registerReceiver(receiver, intentFilter);
+
         haiphongLayout = (LinearLayout) findViewById(R.id.haiphong);
         namdinhLayout = (LinearLayout) findViewById(R.id.namdinh);
         hanamLayout = (LinearLayout) findViewById(R.id.hanam);
@@ -26,33 +37,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this,DetailsActivity.class);
+        Intent intent = new Intent(this,WeatherService.class);
         Bundle bundle = new Bundle();
         switch (v.getId()) {
             case R.id.haiphong: {
-                bundle.putString("name","Hải Phòng");
-                bundle.putInt("imageResource",R.mipmap.rainy);
-                bundle.putString("tem","29");
+                bundle.putString("city","Haiphong");
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startService(intent);
                 break;
             }
             case R.id.namdinh: {
-                bundle.putString("name","Nam Định");
-                bundle.putInt("imageResource",R.mipmap.partly_sunny);
-                bundle.putString("tem","35");
+                bundle.putString("city","Namdinh");
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startService(intent);
                 break;
             }
             case R.id.hanam: {
-                bundle.putString("name","Hà Nam");
-                bundle.putInt("imageResource",R.mipmap.snowy);
-                bundle.putString("tem","-10");
+                bundle.putString("city","Hanam");
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startService(intent);
                 break;
             }
+        }
+    }
+
+    public class MyReceiver extends BroadcastReceiver {
+        public static final String RESPONE_ACTION = "android.intent.action.MAIN";
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Bundle bundle = intent.getExtras();
+            Log.d("DMM","xong");
+            Intent changeActivityIntent = new Intent(MainActivity.this,DetailsActivity.class);
+            changeActivityIntent.putExtras(bundle);
+            startActivity(changeActivityIntent);
         }
     }
 }
