@@ -97,10 +97,9 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@mipmap/precipitation" />
-                <TextView
+                <TextView android:id="@+id/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="90%"
                     android:textSize="30dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
@@ -120,10 +119,9 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@mipmap/wind" />
-                <TextView
+                <TextView android:id="@+id/wind_speed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100mph"
                     android:textSize="30dp"
                     android:layout_marginLeft="10dp"
                     android:textColor="#FFFFFF" />
