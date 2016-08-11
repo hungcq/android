@@ -2,7 +2,6 @@ package raijin.session15_retrofit;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<JsonItemList> call, Response<JsonItemList> response) {
                 if(response.code() == HttpURLConnection.HTTP_OK) {
                     JsonItemList jsonItemList = response.body();
-                    for(JsonItem jsonItem : jsonItemList.getJsonItemList()) {
+                    for(JsonWeatherItem jsonItem : jsonItemList.getJsonItemList()) {
                         listUrl.add(jsonItem.getJsonThumbItem().getUrl());
                     }
                     fillData();
