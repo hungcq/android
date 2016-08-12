@@ -8,11 +8,22 @@ import com.google.gson.annotations.SerializedName;
 public class JsonWeatherModel {
     private static final String MAIN = "main";
     private static final String DESCREPTION = "description";
+    private static final String ICON = "icon";
 
     @SerializedName(MAIN)
     private String main;
     @SerializedName(DESCREPTION)
     private String description;
+    @SerializedName(ICON)
+    private String icon;
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
     public String getMain() {
         return main;
