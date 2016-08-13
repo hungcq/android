@@ -12,5 +12,5 @@ import retrofit2.http.Query;
 public interface GetService {
 //    http://api.openweathermap.org/data/2.5/weather?q=hanoi&&APPID=1d0c9ee28484e62b8e883736a30b7468
     @GET("/data/2.5/weather")
-    Call<JsonModel> callJson(@Query("q") String location, @Query("APPID") String key);
+    Call<JsonModel> callJson(@Query("q") String location, @Query("appid") String key);
 }
