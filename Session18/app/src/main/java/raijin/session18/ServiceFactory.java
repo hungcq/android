@@ -1,4 +1,4 @@
-package raijin.session15_retrofit;
+package raijin.session18;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
