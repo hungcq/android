@@ -10,8 +10,10 @@ import android.widget.TextView;
  * Created by 1918 on 15-Jul-16.
  */
 public class MyViewHolder extends RecyclerView.ViewHolder {
+
     private ImageView imageView;
     private TextView nameTextView;
+    private TextView ageTextView;
 
     public TextView getAgeTextView() {
         return ageTextView;
@@ -36,8 +38,6 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public void setImageView(ImageView imageView) {
         this.imageView = imageView;
     }
-
-    private TextView ageTextView;
 
     public MyViewHolder(View itemView) {
         super(itemView);
