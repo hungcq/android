@@ -119,48 +119,48 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
                 MainActivity.getChosenAnswer().set(count, 0);
                 questionContentTextView.setText(mathWord.getExplanation());
                 setButtonColor();
+                for (int i = 0; i < 4; i++) {
+                    answerButtonList.get(i).setOnClickListener(null);
+                }
                 if (result == 0) {
                     rightAnswerCount++;
                     rightCountTextView.setText("Right answers: " + rightAnswerCount);
-                    for (int i = 0; i < 4; i++) {
-                        answerButtonList.get(i).setOnClickListener(null);
-                    }
                 }
                 break;
             case R.id.answer_1:
                 MainActivity.getChosenAnswer().set(count, 1);
                 questionContentTextView.setText(mathWord.getExplanation());
                 setButtonColor();
+                for (int i = 0; i < 4; i++) {
+                    answerButtonList.get(i).setOnClickListener(null);
+                }
                 if (result == 1) {
                     rightAnswerCount++;
                     rightCountTextView.setText("Right answers: " + rightAnswerCount);
-                    for (int i = 0; i < 4; i++) {
-                        answerButtonList.get(i).setOnClickListener(null);
-                    }
                 }
                 break;
             case R.id.answer_2:
                 MainActivity.getChosenAnswer().set(count, 2);
                 questionContentTextView.setText(mathWord.getExplanation());
                 setButtonColor();
+                for (int i = 0; i < 4; i++) {
+                    answerButtonList.get(i).setOnClickListener(null);
+                }
                 if (result == 2) {
                     rightAnswerCount++;
                     rightCountTextView.setText("Right answers: " + rightAnswerCount);
-                    for (int i = 0; i < 4; i++) {
-                        answerButtonList.get(i).setOnClickListener(null);
-                    }
                 }
                 break;
             case R.id.answer_3:
                 MainActivity.getChosenAnswer().set(count, 3);
                 questionContentTextView.setText(mathWord.getExplanation());
                 setButtonColor();
+                for (int i = 0; i < 4; i++) {
+                    answerButtonList.get(i).setOnClickListener(null);
+                }
                 if (result == 3) {
                     rightAnswerCount++;
                     rightCountTextView.setText("Right answers: " + rightAnswerCount);
-                    for (int i = 0; i < 4; i++) {
-                        answerButtonList.get(i).setOnClickListener(null);
-                    }
                 }
                 break;
             case R.id.button_next:
