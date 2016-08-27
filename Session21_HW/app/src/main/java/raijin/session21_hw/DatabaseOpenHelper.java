@@ -1,4 +1,4 @@
-package raijin.session21_sql;
+package raijin.session21_hw;
 
 import android.content.Context;
 

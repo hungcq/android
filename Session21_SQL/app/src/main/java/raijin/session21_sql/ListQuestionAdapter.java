@@ -55,7 +55,7 @@ public class ListQuestionAdapter extends RecyclerView.Adapter<ListQuestionAdapte
         public ItemHolder(View itemView) {
             super(itemView);
             contentText = (TextView) itemView.findViewById(R.id.text_content);
-            textViewList=new ArrayList<>();
+            textViewList = new ArrayList<>();
             textViewList.add((TextView) itemView.findViewById(R.id.text_01));
             textViewList.add((TextView) itemView.findViewById(R.id.text_02));
             textViewList.add((TextView) itemView.findViewById(R.id.text_03));

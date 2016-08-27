@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="#f6fbbb"
+    tools:context="raijin.session21_hw.QuestionFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/text_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#133551"
+            android:textSize="24sp"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <TextView android:id="@+id/text_right_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#133551"
+            android:textSize="24sp"
+            android:text="avzcvcz"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/question_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:textColor="#133551"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+        <Button android:id="@+id/answer_0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:text="A"
+            android:background="@drawable/custom_button"/>
+        <Button android:id="@+id/answer_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="30dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:text="B"
+            android:background="@drawable/custom_button"/>
+        <Button android:id="@+id/answer_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="30dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:text="C"
+            android:background="@drawable/custom_button"/>
+        <Button android:id="@+id/answer_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@android:color/white"
+            android:text="D"
+            android:background="@drawable/custom_button"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+        <Button android:id="@+id/button_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="60dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/custom_back_button"
+            android:text="Back"/>
+        <Button android:id="@+id/button_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="40dp"
+            android:text="Next"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/custom_back_button"/>
+    </LinearLayout>
+</LinearLayout>
