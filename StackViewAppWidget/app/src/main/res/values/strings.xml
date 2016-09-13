@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">StackViewAppWidget</string>
+    <string name="empty_view_text">empty</string>
+</resources>
