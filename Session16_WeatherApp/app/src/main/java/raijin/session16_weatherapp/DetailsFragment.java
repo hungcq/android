@@ -39,7 +39,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     private static final String FILE_NAME = "WeatherData";
     private String mainWeather = "";
     private Context context;
-    private final String[] city = {"hanoi","seatle","moscow"};
+    private final String[] city = {"hanoi", "seatle", "moscow"};
     private int position;
 
     public DetailsFragment() {
@@ -71,6 +71,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     public void setCity(int position) {
         this.position = position;
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -78,7 +79,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     }
 
     protected void getWeatherData() {
-        if(isNetworkConnected()) {
+        if (isNetworkConnected()) {
             GetService getService = ServiceFactory.getInst().createService(GetService.class);
             Call<JsonModel> call = getService.callJson(city[position], "1d0c9ee28484e62b8e883736a30b7468");
             call.enqueue(new Callback<JsonModel>() {
@@ -95,16 +96,16 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
 
                         Picasso.with(context).load(iconUrl).into(iconImage);
 
-                        int temperature = (int) Double.parseDouble(temp) - 273;
-                        int minTemperature = (int) Double.parseDouble(minTemp) - 273;
-                        int maxTemperature = (int) Double.parseDouble(maxTemp) - 273;
-                        temperatureTextView.setText(Integer.toString(temperature) + "°C");
-                        temperatureDetailsTextView.setText("Low " + Integer.toString(minTemperature) + "°C" + "   High " + Integer.toString(maxTemperature) + "°C");
+                        long temperature = Math.round(Double.parseDouble(temp) - 273);
+                        long minTemperature = Math.round(Double.parseDouble(minTemp) - 273);
+                        long maxTemperature = Math.round(Double.parseDouble(maxTemp) - 273);
+                        temperatureTextView.setText(Long.toString(temperature) + "°C");
+                        temperatureDetailsTextView.setText("Low " + Long.toString(minTemperature) + "°C" + "   High " + Long.toString(maxTemperature) + "°C");
                         if (position == 0) {
                             cityTextView.setText("Hanoi");
-                        } else if(position == 1) {
+                        } else if (position == 1) {
                             cityTextView.setText("Seatle");
-                        } else if(position == 2) {
+                        } else if (position == 2) {
                             cityTextView.setText("Moscow");
                         }
                         loadBackgroundImage();
@@ -121,9 +122,9 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     }
 
     private void saveData() {
-        editor.putString("temp",temperatureTextView.getText().toString());
-        editor.putString("temp_details",temperatureDetailsTextView.getText().toString());
-        editor.putString("main_weather",mainWeather);
+        editor.putString("temp", temperatureTextView.getText().toString());
+        editor.putString("temp_details", temperatureDetailsTextView.getText().toString());
+        editor.putString("main_weather", mainWeather);
         editor.commit();
     }
 
@@ -137,9 +138,9 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     }
 
     private void loadData() {
-        temperatureTextView.setText(sharedPreferences.getString("temp",""));
-        temperatureDetailsTextView.setText(sharedPreferences.getString("temp_details",""));
-        mainWeather = sharedPreferences.getString("main_weather","");
+        temperatureTextView.setText(sharedPreferences.getString("temp", ""));
+        temperatureDetailsTextView.setText(sharedPreferences.getString("temp_details", ""));
+        mainWeather = sharedPreferences.getString("main_weather", "");
         loadBackgroundImage();
     }
 
