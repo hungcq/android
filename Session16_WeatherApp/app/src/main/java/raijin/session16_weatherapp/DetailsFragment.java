@@ -17,6 +17,11 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.net.HttpURLConnection;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.SimpleTimeZone;
+import java.util.TimeZone;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +38,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     private TextView temperatureTextView;
     private TextView temperatureDetailsTextView;
     private TextView cityTextView;
+    private TextView timeUpdatedTextView;
     private SwipeRefreshLayout swipeRefreshLayout;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -61,6 +67,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
         iconImage = (ImageView) view.findViewById(R.id.weather_icon);
         temperatureTextView = (TextView) view.findViewById(R.id.temperature);
         temperatureDetailsTextView = (TextView) view.findViewById(R.id.tem_details);
+        timeUpdatedTextView = (TextView) view.findViewById(R.id.time);
         cityTextView = (TextView) view.findViewById(R.id.city);
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -93,6 +100,12 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
                         String icon = jsonModel.getJsonWeatherModel().get(0).getIcon();
                         String minTemp = jsonModel.getJsonMainModel().getMinTemp() + "";
                         String maxTemp = jsonModel.getJsonMainModel().getMaxTemp() + "";
+                        long time = jsonModel.getDt();
+                        long timeInMillis = Long.parseLong(time + "000");
+                        Date date = new Date(timeInMillis);
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("E y-M-d, h:m:s a z");
+                        dateFormat.setTimeZone(new SimpleTimeZone(25200000, "GMT"));
+                        String updatedTime = dateFormat.format(date);
                         iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
 
                         Picasso.with(context).load(iconUrl).into(iconImage);
@@ -102,6 +115,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
                         long maxTemperature = Math.round(Double.parseDouble(maxTemp) - 273);
                         temperatureTextView.setText(Long.toString(temperature) + "°C");
                         temperatureDetailsTextView.setText("Low " + Long.toString(minTemperature) + "°C" + "   High " + Long.toString(maxTemperature) + "°C");
+                        timeUpdatedTextView.setText("Data updated at: " + updatedTime);
                         loadBackgroundImage();
                         saveData();
                     }
@@ -129,6 +143,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
         editor.putString("temp", temperatureTextView.getText().toString());
         editor.putString("temp_details", temperatureDetailsTextView.getText().toString());
         editor.putString("main_weather", mainWeather);
+        editor.putString("time", timeUpdatedTextView.getText().toString());
         editor.commit();
     }
 
@@ -145,6 +160,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
         temperatureTextView.setText(sharedPreferences.getString("temp", ""));
         temperatureDetailsTextView.setText(sharedPreferences.getString("temp_details", ""));
         mainWeather = sharedPreferences.getString("main_weather", "");
+        timeUpdatedTextView.setText(sharedPreferences.getString("time", ""));
         loadBackgroundImage();
     }
 

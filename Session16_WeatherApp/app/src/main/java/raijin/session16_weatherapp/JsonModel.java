@@ -10,11 +10,18 @@ import java.util.List;
 public class JsonModel {
     private static final String WEATHER = "weather";
     private static final String MAIN = "main";
+    private static final String DT = "dt";
 
     @SerializedName(WEATHER)
     private List<JsonWeatherModel> jsonWeatherModel;
     @SerializedName(MAIN)
     private JsonMainModel jsonMainModel;
+    @SerializedName(DT)
+    private long dt;
+
+    public long getDt() {
+        return dt;
+    }
 
     public List<JsonWeatherModel> getJsonWeatherModel() {
         return jsonWeatherModel;
