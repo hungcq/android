@@ -12,15 +12,17 @@ public class ServiceFactory {
     private static final String BASE_URL = "http://api.openweathermap.org";
 
     private static ServiceFactory inst = new ServiceFactory();
+
     public static ServiceFactory getInst() {
         return inst;
     }
+
     public ServiceFactory() {
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).
                 addConverterFactory(GsonConverterFactory.create()).build();
     }
 
-    public <ServiceClass>ServiceClass createService(Class<ServiceClass> serviceClass) {
+    public <ServiceClass> ServiceClass createService(Class<ServiceClass> serviceClass) {
         return retrofit.create(serviceClass);
     }
 }

@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSubmit = (Button) findViewById(R.id.btn_submit);
         txtOperation = (TextView) findViewById(R.id.txt_operation);
         txtResult = (TextView) findViewById(R.id.txt_result);
+        setDefaultValue();
     }
 
     private void addListener() {
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void setDefaultValue(){
+    private void setDefaultValue() {
         edtNumberA.setText("");
         edtNumberB.setText("");
         txtOperation.setText("");
@@ -120,13 +121,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent.putExtra(MainActivity.NUMBER_A, numberA);
                         intent.putExtra(MainActivity.NUMBER_B, numberB);
                         intent.putExtra(MainActivity.OPERATOR, operator);
-                        Toast.makeText(v.getContext(),"Bố đẩy đi rồi",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(v.getContext(), "Bố đẩy đi rồi", Toast.LENGTH_SHORT).show();
                         startService(intent);
-
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
-                    Toast.makeText(v.getContext(),"Fail cmnr",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "Fail cmnr", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onReceive(Context context, Intent intent) {
             int result = intent.getIntExtra(MainActivity.KEY, 0);
-            Toast.makeText(context,"Tao nhận được rồi",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Tao nhận được rồi", Toast.LENGTH_SHORT).show();
             txtResult.setText(String.valueOf(result));
         }
     }

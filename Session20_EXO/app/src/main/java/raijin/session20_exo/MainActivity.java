@@ -1,8 +1,8 @@
 package raijin.session20_exo;
 
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,7 +18,7 @@ import com.google.android.exoplayer.util.Util;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String URL = "http://s82.stream.nixcdn.com/b52c16377106ce46a21df208a0814da1/57b975a9/NhacCuaTui908/Liberators-EpicScore-4144692.mp3";
+    private static String URL = "http://data17.chiasenhac.com/downloads/1054/1/1053812-b06f9c5e/320/Rule%20The%20World%20-%20Take%20That%20%5BMP3%20320kbps%5D.mp3";
     private static int BUFFER_SEGMENT_SIZE = 64 * 1024;
     private static int BUFFER_SEGMENT_COUNT = 256;
 

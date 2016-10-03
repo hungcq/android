@@ -66,6 +66,7 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
         swipeRefreshLayout.setOnRefreshListener(this);
         sharedPreferences = context.getSharedPreferences(FILE_NAME, context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
+        setCityName();
     }
 
     public void setCity(int position) {
@@ -101,13 +102,6 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
                         long maxTemperature = Math.round(Double.parseDouble(maxTemp) - 273);
                         temperatureTextView.setText(Long.toString(temperature) + "°C");
                         temperatureDetailsTextView.setText("Low " + Long.toString(minTemperature) + "°C" + "   High " + Long.toString(maxTemperature) + "°C");
-                        if (position == 0) {
-                            cityTextView.setText("Hanoi");
-                        } else if (position == 1) {
-                            cityTextView.setText("Seatle");
-                        } else if (position == 2) {
-                            cityTextView.setText("Moscow");
-                        }
                         loadBackgroundImage();
                         saveData();
                     }
@@ -119,6 +113,16 @@ public class DetailsFragment extends Fragment implements SwipeRefreshLayout.OnRe
                 }
             });
         } else loadData();
+    }
+
+    private void setCityName() {
+        if (position == 0) {
+            cityTextView.setText("Hanoi");
+        } else if (position == 1) {
+            cityTextView.setText("Seatle");
+        } else if (position == 2) {
+            cityTextView.setText("Moscow");
+        }
     }
 
     private void saveData() {

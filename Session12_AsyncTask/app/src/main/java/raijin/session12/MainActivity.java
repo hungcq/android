@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button downloadButton = (Button) findViewById(R.id.download_button);
+        imageView = (ImageView) findViewById(R.id.fuck_image);
         downloadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        imageView = (ImageView) findViewById(R.id.fuck_image);
     }
 
     public boolean isNetworkConnected() {

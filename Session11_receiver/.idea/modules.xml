@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Session11_receiver.iml" filepath="$PROJECT_DIR$/Session11_receiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session11_Receiver.iml" filepath="$PROJECT_DIR$/Session11_Receiver.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

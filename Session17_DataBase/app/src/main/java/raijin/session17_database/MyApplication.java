@@ -16,8 +16,7 @@ public class MyApplication extends Application {
     }
 
     private void realmConfig() {
-        RealmConfiguration configuration = new RealmConfiguration.Builder(getApplicationContext())
-                .build();
+        RealmConfiguration configuration = new RealmConfiguration.Builder(getApplicationContext()).build();
         Realm.setDefaultConfiguration(configuration);
     }
 }

@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     public static String text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,16 +37,16 @@ public class MainActivity extends AppCompatActivity {
                             .setContentText(content);
                     NotificationManager notificationManager = (NotificationManager)
                             context.getSystemService(context.NOTIFICATION_SERVICE);
-                    Intent resultIntent = new Intent(context,new ResultActivity().getClass());
-                    resultIntent.putExtra("content",content);
+                    Intent resultIntent = new Intent(context, new ResultActivity().getClass());
+                    resultIntent.putExtra("content", content);
                     PendingIntent resultPendingIntent = PendingIntent.getActivity(
-                                    context,
-                                    0,
-                                    resultIntent,
-                                    PendingIntent.FLAG_UPDATE_CURRENT
-                            );
+                            context,
+                            0,
+                            resultIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT
+                    );
                     builder.setContentIntent(resultPendingIntent);
-                    notificationManager.notify(0,builder.build());
+                    notificationManager.notify(0, builder.build());
                     break;
                 case Intent.ACTION_AIRPLANE_MODE_CHANGED:
                     builder = new Notification.Builder(context)
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                             .setContentText("Air Plane Mode Changed!");
                     notificationManager = (NotificationManager)
                             context.getSystemService(context.NOTIFICATION_SERVICE);
-                    notificationManager.notify(0,builder.build());
+                    notificationManager.notify(0, builder.build());
 
                     break;
             }

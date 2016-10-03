@@ -14,8 +14,9 @@ public class DBcontext {
     private DBcontext() {
         realm = Realm.getDefaultInstance();
     }
+
     public static DBcontext getInst() {
-        if(inst == null) {
+        if (inst == null) {
             inst = new DBcontext();
         }
         return inst;

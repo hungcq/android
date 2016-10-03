@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.os.PowerManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         downloadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                downloadTask.execute("http://download.f9.stream.nixcdn.com/1e71d4425bb687562c076f5165ec608d/5798c43d/NhacCuaTui923/DemNgayXaEm-OnlyCLouHoang-4429469.mp3");
+                downloadTask.execute("http://data17.chiasenhac.com/downloads/1054/1/1053812-b06f9c5e/flac/Rule%20The%20World%20-%20Take%20That%20%5BFLAC%20Lossless%5D.flac");
             }
         });
     }
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // download the file
                 input = connection.getInputStream();
-                output = new FileOutputStream("/sdcard/nhac.mp3");
+                output = new FileOutputStream(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath() + "/Rule The World.flac");
 
                 byte data[] = new byte[4096];
                 long total = 0;
@@ -122,8 +123,7 @@ public class MainActivity extends AppCompatActivity {
             // take CPU lock to prevent CPU from going off if the user
             // presses the power button during download
             PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-            mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                    getClass().getName());
+            mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, getClass().getName());
             mWakeLock.acquire();
             mProgressDialog.show();
         }
@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             mWakeLock.release();
             mProgressDialog.dismiss();
+            downloadButton.setEnabled(false);
             if (result != null)
                 Toast.makeText(context, "Download error: " + result, Toast.LENGTH_LONG).show();
             else
