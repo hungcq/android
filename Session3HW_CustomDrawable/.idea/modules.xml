@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Session3_HW.iml" filepath="$PROJECT_DIR$/Session3_HW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session3HW_CustomDrawable.iml" filepath="$PROJECT_DIR$/Session3HW_CustomDrawable.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
