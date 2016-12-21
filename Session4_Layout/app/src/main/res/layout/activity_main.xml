@@ -4,37 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
+    android:paddingRight="16dp"
+    tools:context="raijin.session4.MainActivity">
 
-tools:context="raijin.session4.MainActivity">
     <EditText
+        android:id="@+id/edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Reminder name"
-        android:id="@+id/edittext"/>
+        android:hint="Reminder name" />
+
     <Spinner
+        android:id="@+id/spinner1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edittext"
-        android:id="@+id/spinner1"
         android:layout_alignParentLeft="true"
+        android:layout_below="@id/edittext"
         android:layout_toLeftOf="@+id/edittext2"></Spinner>
+
     <EditText
+        android:id="@id/edittext2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edittext"
         android:layout_alignParentRight="true"
-        android:hint="abcafwefasbvxb"
-        android:id="@id/edittext2"></EditText>
+        android:layout_below="@id/edittext"
+        android:hint="abcafwefasbvxb"></EditText>
+
     <Button
         android:layout_width="0dp"
-        android:layout_alignStart="@id/edittext2"
-        android:layout_alignLeft="@id/edittext"
         android:layout_height="wrap_content"
-        android:text="Done"
+        android:layout_alignLeft="@id/edittext"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@id/edittext2"
         android:layout_below="@id/edittext2"
-        android:layout_alignParentRight="true"/>
-
+        android:text="Done" />
 
 
 </RelativeLayout>

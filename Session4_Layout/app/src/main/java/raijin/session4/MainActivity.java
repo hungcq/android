@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         places.add("Hanoi");
         places.add("Haiphong");
         places.add("Another planet");
-        ArrayAdapter<String> adaper = new ArrayAdapter<>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,android.R.layout.simple_spinner_item,places);
-        adaper.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adaper);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
     }
 }
