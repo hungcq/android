@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "785949523466",
+    "firebase_url": "https://taxi69-c7f70.firebaseio.com",
+    "project_id": "taxi69-c7f70",
+    "storage_bucket": "taxi69-c7f70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785949523466:android:7b92050efde58dc6",
+        "android_client_info": {
+          "package_name": "raijin.taxi69"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785949523466-nch9n808rlm18pkktg98n2s39tvu1ou6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "raijin.taxi69",
+            "certificate_hash": "AAA6CBA743D7B963EB2D5C8E942FC66F5D56DEAD"
+          }
+        },
+        {
+          "client_id": "785949523466-4gvibjme9f60nvevan4gufh4miqpov91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsO5X9ciIyRPpB2rUpIbJYm77GztbObkc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785949523466-4gvibjme9f60nvevan4gufh4miqpov91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

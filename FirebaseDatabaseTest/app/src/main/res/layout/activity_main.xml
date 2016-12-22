@@ -10,8 +10,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="raijin.firebasedatabasetest.MainActivity">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:id="@+id/edit_text_name"
+        android:layout_alignParentTop="true"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone number"
+        android:id="@+id/edit_text_number"
+        android:layout_below="@id/edit_text_name"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_number"
+        android:text="choose avatar"
+        android:id="@+id/button_avatar"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_below="@id/button_avatar"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/text_view_avatar"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button_save"
+        android:text="save"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/button_view_list"
+        android:text="view list"/>
 </RelativeLayout>
