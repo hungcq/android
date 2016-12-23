@@ -1,10 +1,13 @@
 package raijin.taxi69.activities;
 
+import android.animation.Animator;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -15,9 +18,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
@@ -36,12 +41,26 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.maps.android.PolyUtil;
+import com.google.maps.android.SphericalUtil;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
+import raijin.taxi69.Constants;
 import raijin.taxi69.R;
 import raijin.taxi69.Utils;
+import raijin.taxi69.models.DoubleArrayEvaluator;
+import raijin.taxi69.models.TaxiInfo;
+import raijin.taxi69.models.TestPoint;
 import raijin.taxi69.models.jsondirectionmodels.JsonDirectionModel;
 import raijin.taxi69.webservices.DirectionAPI;
 import raijin.taxi69.webservices.DirectionServiceFactory;
@@ -64,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final double DEFAULT_LNG = 105.836304;
     private Marker currentActiveMarker;
     private Polyline currentPolyline;
+
     private ImageButton resizeButton;
     private boolean resizeToggle = false;
     private ImageButton myLocationButton;
@@ -73,6 +93,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RelativeLayout bottomLayout;
     private CustomInfoBox pickUpInfoBox;
     private CustomInfoBox dropOffInfoBox;
+
+    private DatabaseReference taxiChildReference;
+    private DatabaseReference testPointChildReference;
+    private List<TaxiInfo> taxiInfoList;
+    private List<TestPoint> testPointList;
 
     private Location location;
     private String address;
@@ -125,6 +150,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dropOffInfoBox = (CustomInfoBox) findViewById(R.id.info_box_drop_off);
         dropOffInfoBox.initData(R.drawable.yellow_point, "Drop-off point", Utils.getAddressFromLatLng(this, new LatLng(DEFAULT_LAT, DEFAULT_LNG)));
         dropOffInfoBox.setOnClickListener(this);
+
+        taxiChildReference = FirebaseDatabase.getInstance().getReference().child(Constants.CHILD_TAXI);
+        taxiInfoList = new ArrayList<>();
+        taxiChildReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                taxiInfoList.add(dataSnapshot.getValue(TaxiInfo.class));
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        testPointChildReference = FirebaseDatabase.getInstance().getReference().child(Constants.CHILD_TEST_POINT);
+        testPointList = new ArrayList<>();
+        testPointChildReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                TestPoint testPoint = dataSnapshot.getValue(TestPoint.class);
+                testPointList.add(testPoint);
+//                taxiChildReference.child(dataSnapshot.getKey()).setValue(new TaxiInfo(12000, 1, testPoint.getLatitude(), testPoint.getLongitude(), 0));
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -141,6 +225,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStop();
     }
 
+    private int count;
+    private List<Marker> markerList;
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
@@ -149,6 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         map.getUiSettings().setCompassEnabled(false);
         map.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.mapstyle_silver));
         initMapListener();
+
     }
 
     private void initMapListener() {
@@ -282,6 +370,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    private Handler handler = new Handler();
     @Override
     public void onMapClick(final LatLng latLng) {
         if (currentActiveMarker != null) {
@@ -306,6 +395,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 });
             }
         }).start();
+
+        markerList = new ArrayList<>();
+        for (TaxiInfo taxiInfo : taxiInfoList) {
+            addCarMarker(taxiInfo.getLatitude(), taxiInfo.getLongitude(), taxiInfo.getAngle());
+        }
+
+        ScheduledExecutorService scheduleTaskExecutor = Executors.newScheduledThreadPool(5);
+        scheduleTaskExecutor.scheduleAtFixedRate(new Runnable() {
+            public void run() {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        count ++;
+                        if (count == testPointList.size()) {
+                            count = 0;
+                        }
+
+                        moveMarker(testPointList.get(count).getLatitude(),
+                                testPointList.get(count).getLongitude(), markerList.get(0));
+                    }
+                });
+
+            }
+        }, 0, 5, TimeUnit.SECONDS);
+//        testPointChildReference.push().setValue(new TestPoint(latLng.latitude, latLng.longitude));
     }
 
     @Override
@@ -336,6 +450,74 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onFailure(Call<JsonDirectionModel> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void addCarMarker(double latitude, double longitude, double angle) {
+        MarkerOptions options = new MarkerOptions().position(new LatLng(latitude, longitude));
+        options.icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.ic_car, 40, 80)));
+        Marker marker = map.addMarker(options);
+        marker.setRotation((float) angle);
+        markerList.add(marker);
+    }
+
+    private Bitmap resizeMapIcons(int icon, int width, int height) {
+        Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(), icon);
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, width, height, false);
+        return resizedBitmap;
+    }
+
+    private void moveMarker(double latitude, double longitude, final Marker marker) {
+        double startAngle = marker.getRotation();
+        double finalAngle = SphericalUtil.computeHeading(marker.getPosition(), new LatLng(latitude, longitude));
+        if (finalAngle - startAngle > 180) {
+            startAngle += 360;
+        }
+        ValueAnimator angleAnimator = ValueAnimator.ofFloat((float) startAngle,
+                (float) finalAngle );
+        angleAnimator.setDuration(1000);
+        angleAnimator.setInterpolator(new LinearInterpolator());
+        angleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                marker.setRotation((float) animation.getAnimatedValue());
+                Log.d("updated", animation.getAnimatedValue().toString());
+            }
+        });
+
+        double[] startValues = new double[]{marker.getPosition().latitude, marker.getPosition().longitude};
+        double[] endValues = new double[]{latitude, longitude};
+        final ValueAnimator latLngAnimator = ValueAnimator.ofObject(new DoubleArrayEvaluator(), startValues, endValues);
+        latLngAnimator.setDuration(4000);
+        latLngAnimator.setInterpolator(new LinearInterpolator());
+        latLngAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                double[] animatedValue = (double[]) animation.getAnimatedValue();
+                marker.setPosition(new LatLng(animatedValue[0], animatedValue[1]));
+            }
+        });
+        angleAnimator.start();
+        angleAnimator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                latLngAnimator.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
 
             }
         });

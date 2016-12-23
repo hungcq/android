@@ -8,10 +8,16 @@ public class TaxiInfo {
 
     private int price;
     private int type;
+    private double latitude;
+    private double longitude;
+    private double angle;
 
-    public TaxiInfo(int price, int type) {
+    public TaxiInfo(int price, int type, double latitude, double longitude, double angle) {
         this.price = price;
         this.type = type;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.angle = angle;
     }
 
     public TaxiInfo() {
@@ -31,5 +37,29 @@ public class TaxiInfo {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getAngle() {
+        return angle;
+    }
+
+    public void setAngle(double angle) {
+        this.angle = angle;
     }
 }
