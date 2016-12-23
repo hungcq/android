@@ -2,6 +2,7 @@ package raijin.taxi69.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,7 +14,7 @@ import raijin.taxi69.R;
  * Created by 1918 on 22-Dec-16.
  */
 
-public class CustomInfoBox extends LinearLayout {
+public class CustomInfoBox extends LinearLayout implements View.OnClickListener {
 
     private ViewGroup root;
     private ImageView pointImageView;
@@ -22,14 +23,17 @@ public class CustomInfoBox extends LinearLayout {
 
     public CustomInfoBox(Context context) {
         super(context);
+        init();
     }
 
     public CustomInfoBox(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
     }
 
     public CustomInfoBox(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
     }
 
     private void init() {
@@ -38,5 +42,22 @@ public class CustomInfoBox extends LinearLayout {
         pointImageView = (ImageView) root.findViewById(R.id.img_point);
         titleTextView = (TextView) root.findViewById(R.id.tv_title);
         addressTextView = (TextView) root.findViewById(R.id.tv_address);
+
+        root.setOnClickListener(this);
+    }
+
+    public void initData(int imageResource, String title, String address) {
+        pointImageView.setImageResource(imageResource);
+        titleTextView.setText(title);
+        addressTextView.setText(address);
+    }
+
+    public void setAddress(String address) {
+        addressTextView.setText(address);
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

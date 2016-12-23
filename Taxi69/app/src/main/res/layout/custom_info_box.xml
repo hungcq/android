@@ -2,13 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/rounded_white_box"
+    android:padding="@dimen/_3sdp">
 
     <ImageView
         android:layout_width="@dimen/_10sdp"
         android:layout_height="@dimen/_10sdp"
-        android:layout_margin="@dimen/_10sdp"
-        android:id="@+id/img_point" />
+        android:layout_margin="@dimen/_7sdp"
+        android:id="@+id/img_point"
+        android:layout_gravity="center_vertical"/>
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -1,23 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="raijin.taxi69.activities.MainActivity">
-
-    <include layout="@layout/toolbar" />
 
     <fragment
         android:id="@+id/fragment_map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-    
-    <TextView
-        android:layout_width=""
-        android:layout_height="" />
+        android:layout_height="match_parent" />
 
-</android.support.design.widget.CoordinatorLayout>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <raijin.taxi69.widgets.CustomInfoBox
+        android:id="@+id/info_box_pick_up"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="@dimen/_5sdp" />
+
+    <raijin.taxi69.widgets.CustomInfoBox
+        android:id="@+id/info_box_drop_off"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@id/info_box_pick_up"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_layout"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhiteTransparent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/view_pager" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btn_my_location"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_above="@id/bottom_layout"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_my_location"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/rounded_white_box"/>
+
+    <ImageButton
+        android:id="@+id/btn_resize"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/info_box_drop_off"
+        android:src="@drawable/ic_expand"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/rounded_white_box"/>
+
+</RelativeLayout>
