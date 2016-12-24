@@ -50,7 +50,9 @@ import com.google.maps.android.PolyUtil;
 import com.google.maps.android.SphericalUtil;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -59,6 +61,7 @@ import raijin.taxi69.Constants;
 import raijin.taxi69.R;
 import raijin.taxi69.Utils;
 import raijin.taxi69.models.DoubleArrayEvaluator;
+import raijin.taxi69.models.DriverInfo;
 import raijin.taxi69.models.TaxiInfo;
 import raijin.taxi69.models.TestPoint;
 import raijin.taxi69.models.jsondirectionmodels.JsonDirectionModel;
@@ -96,11 +99,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DatabaseReference taxiChildReference;
     private DatabaseReference testPointChildReference;
-    private List<TaxiInfo> taxiInfoList;
+    private Map<String, TaxiInfo> taxiInfoMap;
     private List<TestPoint> testPointList;
 
     private Location location;
-    private String address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,33 +154,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dropOffInfoBox.setOnClickListener(this);
 
         taxiChildReference = FirebaseDatabase.getInstance().getReference().child(Constants.CHILD_TAXI);
-        taxiInfoList = new ArrayList<>();
-        taxiChildReference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                taxiInfoList.add(dataSnapshot.getValue(TaxiInfo.class));
-            }
+        taxiInfoMap = new HashMap<>();
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
         testPointChildReference = FirebaseDatabase.getInstance().getReference().child(Constants.CHILD_TEST_POINT);
         testPointList = new ArrayList<>();
         testPointChildReference.addChildEventListener(new ChildEventListener() {
@@ -237,6 +214,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         map.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.mapstyle_silver));
         initMapListener();
 
+        taxiChildReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                TaxiInfo taxiInfo = dataSnapshot.getValue(TaxiInfo.class);
+                addCarMarker(taxiInfo);
+                taxiInfoMap.put(dataSnapshot.getKey(), taxiInfo);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                TaxiInfo taxiInfo = taxiInfoMap.get(dataSnapshot.getKey());
+                moveMarker(taxiInfo.getMarker(), dataSnapshot.getValue(TaxiInfo.class));
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                taxiInfoMap.remove(dataSnapshot.getKey());
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void initMapListener() {
@@ -370,7 +376,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    private Handler handler = new Handler();
     @Override
     public void onMapClick(final LatLng latLng) {
         if (currentActiveMarker != null) {
@@ -383,37 +388,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         location.setLatitude(latLng.latitude);
         location.setLongitude(latLng.longitude);
         drawPolyline(currentLocation, location);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                address = Utils.getAddressFromLatLng(MainActivity.this, latLng);
-                getWindow().getDecorView().getHandler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        pickUpInfoBox.setAddress(address);
-                    }
-                });
-            }
-        }).start();
+        setAddress(pickUpInfoBox, latLng);
 
-        markerList = new ArrayList<>();
-        for (TaxiInfo taxiInfo : taxiInfoList) {
-            addCarMarker(taxiInfo.getLatitude(), taxiInfo.getLongitude(), taxiInfo.getAngle());
-        }
-
+        final Handler handler = new Handler();
         ScheduledExecutorService scheduleTaskExecutor = Executors.newScheduledThreadPool(5);
         scheduleTaskExecutor.scheduleAtFixedRate(new Runnable() {
             public void run() {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        count ++;
-                        if (count == testPointList.size()) {
-                            count = 0;
-                        }
-
-                        moveMarker(testPointList.get(count).getLatitude(),
-                                testPointList.get(count).getLongitude(), markerList.get(0));
                     }
                 });
 
@@ -424,7 +407,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onMarkerClick(Marker marker) {
+        Location location = new Location("");
+        location.setLatitude(marker.getPosition().latitude);
+        location.setLongitude(marker.getPosition().longitude);
+        drawPolyline(currentLocation, location);
+        setAddress(pickUpInfoBox, marker.getPosition());
         return false;
+    }
+
+    private void setAddress(final CustomInfoBox customInfoBox, final LatLng latLng) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final String address = Utils.getAddressFromLatLng(MainActivity.this, latLng);
+                getWindow().getDecorView().getHandler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        customInfoBox.setAddress(address);
+                    }
+                });
+            }
+        }).start();
     }
 
     private void drawPolyline(Location startPoint, Location endPoint) {
@@ -455,12 +458,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private void addCarMarker(double latitude, double longitude, double angle) {
-        MarkerOptions options = new MarkerOptions().position(new LatLng(latitude, longitude));
-        options.icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.ic_car, 40, 80)));
+    private void addCarMarker(TaxiInfo taxiInfo) {
+        MarkerOptions options = new MarkerOptions().position(new LatLng(taxiInfo.getLatitude(), taxiInfo.getLongitude()));
+        options.icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.ic_car, 30, 60)));
         Marker marker = map.addMarker(options);
-        marker.setRotation((float) angle);
-        markerList.add(marker);
+        marker.setRotation((float) taxiInfo.getAngle());
+        taxiInfo.setMarker(marker);
     }
 
     private Bitmap resizeMapIcons(int icon, int width, int height) {
@@ -469,57 +472,60 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return resizedBitmap;
     }
 
-    private void moveMarker(double latitude, double longitude, final Marker marker) {
-        double startAngle = marker.getRotation();
-        double finalAngle = SphericalUtil.computeHeading(marker.getPosition(), new LatLng(latitude, longitude));
-        if (finalAngle - startAngle > 180) {
-            startAngle += 360;
+    private void moveMarker(final Marker marker, TaxiInfo taxiInfo) {
+        if (marker != null) {
+            double startAngle = marker.getRotation();
+            double finalAngle = SphericalUtil.computeHeading(marker.getPosition(),
+                    new LatLng(taxiInfo.getLatitude(), taxiInfo.getLongitude()));
+            if (finalAngle - startAngle > 180) {
+                startAngle += 360;
+            }
+            ValueAnimator angleAnimator = ValueAnimator.ofFloat((float) startAngle,
+                    (float) finalAngle);
+            angleAnimator.setDuration(1000);
+            angleAnimator.setInterpolator(new LinearInterpolator());
+            angleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    marker.setRotation((float) animation.getAnimatedValue());
+                    Log.d("updated", animation.getAnimatedValue().toString());
+                }
+            });
+
+            double[] startValues = new double[]{marker.getPosition().latitude, marker.getPosition().longitude};
+            double[] endValues = new double[]{taxiInfo.getLatitude(), taxiInfo.getLongitude()};
+            final ValueAnimator latLngAnimator = ValueAnimator.ofObject(new DoubleArrayEvaluator(), startValues, endValues);
+            latLngAnimator.setDuration(4000);
+            latLngAnimator.setInterpolator(new LinearInterpolator());
+            latLngAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    double[] animatedValue = (double[]) animation.getAnimatedValue();
+                    marker.setPosition(new LatLng(animatedValue[0], animatedValue[1]));
+                }
+            });
+            angleAnimator.start();
+            angleAnimator.addListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    latLngAnimator.start();
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+
+                }
+            });
         }
-        ValueAnimator angleAnimator = ValueAnimator.ofFloat((float) startAngle,
-                (float) finalAngle );
-        angleAnimator.setDuration(1000);
-        angleAnimator.setInterpolator(new LinearInterpolator());
-        angleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                marker.setRotation((float) animation.getAnimatedValue());
-                Log.d("updated", animation.getAnimatedValue().toString());
-            }
-        });
-
-        double[] startValues = new double[]{marker.getPosition().latitude, marker.getPosition().longitude};
-        double[] endValues = new double[]{latitude, longitude};
-        final ValueAnimator latLngAnimator = ValueAnimator.ofObject(new DoubleArrayEvaluator(), startValues, endValues);
-        latLngAnimator.setDuration(4000);
-        latLngAnimator.setInterpolator(new LinearInterpolator());
-        latLngAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                double[] animatedValue = (double[]) animation.getAnimatedValue();
-                marker.setPosition(new LatLng(animatedValue[0], animatedValue[1]));
-            }
-        });
-        angleAnimator.start();
-        angleAnimator.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                latLngAnimator.start();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
     }
 }

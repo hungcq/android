@@ -1,5 +1,7 @@
 package raijin.taxi69.models;
 
+import com.google.android.gms.maps.model.Marker;
+
 /**
  * Created by 1918 on 23-Dec-16.
  */
@@ -11,6 +13,7 @@ public class TaxiInfo {
     private double latitude;
     private double longitude;
     private double angle;
+    private Marker marker;
 
     public TaxiInfo(int price, int type, double latitude, double longitude, double angle) {
         this.price = price;
@@ -61,5 +64,13 @@ public class TaxiInfo {
 
     public void setAngle(double angle) {
         this.angle = angle;
+    }
+
+    public Marker getMarker() {
+        return marker;
+    }
+
+    public void setMarker(Marker marker) {
+        this.marker = marker;
     }
 }

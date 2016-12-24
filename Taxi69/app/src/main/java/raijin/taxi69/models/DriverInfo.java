@@ -9,8 +9,9 @@ public class DriverInfo {
     private String name;
     private String photoUrl;
 
-    public DriverInfo(String name) {
+    public DriverInfo(String name, String photuUrl) {
         this.name = name;
+        this.photoUrl = photuUrl;
     }
 
     public DriverInfo() {
@@ -22,5 +23,13 @@ public class DriverInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 }
