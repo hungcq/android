@@ -3,6 +3,7 @@ package raijin.taxi69.activities;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
@@ -24,7 +25,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -41,6 +44,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,6 +53,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.maps.android.PolyUtil;
 import com.google.maps.android.SphericalUtil;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,8 +66,8 @@ import java.util.concurrent.TimeUnit;
 import raijin.taxi69.Constants;
 import raijin.taxi69.R;
 import raijin.taxi69.Utils;
+import raijin.taxi69.adapters.ViewPagerAdapter;
 import raijin.taxi69.models.DoubleArrayEvaluator;
-import raijin.taxi69.models.DriverInfo;
 import raijin.taxi69.models.TaxiInfo;
 import raijin.taxi69.models.TestPoint;
 import raijin.taxi69.models.jsondirectionmodels.JsonDirectionModel;
@@ -102,7 +108,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Map<String, TaxiInfo> taxiInfoMap;
     private List<TestPoint> testPointList;
 
+    private TextView userName;
+    private TextView userEmail;
+    private ImageView userAvatar;
+
+
     private Location location;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,9 +155,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         myLocationButton = (ImageButton) findViewById(R.id.btn_my_location);
         myLocationButton.setOnClickListener(this);
 
+        userAvatar = (ImageView) findViewById(R.id.img_user_avatar);
+        userName = (TextView) findViewById(R.id.tv_user_name);
+        userEmail = (TextView) findViewById(R.id.tv_user_email);
+
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         bottomLayout = (RelativeLayout) findViewById(R.id.bottom_layout);
+        setUpViewPagerAndTabLayout();
 
         pickUpInfoBox = (CustomInfoBox) findViewById(R.id.info_box_pick_up);
         pickUpInfoBox.initData(R.drawable.blue_point, "Pick-up point", Utils.getAddressFromLatLng(this, new LatLng(DEFAULT_LAT, DEFAULT_LNG)));
@@ -188,10 +206,54 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    private void authencation() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser == null) {
+            startActivity(new Intent(this, SignInActivity.class));
+            finish();
+        } else {
+            userName.setText(firebaseUser.getDisplayName());
+            userEmail.setText(firebaseUser.getEmail());
+            if (firebaseUser.getPhotoUrl() != null) {
+                Picasso.with(this).load(firebaseUser.getPhotoUrl()).into(userAvatar);
+            }
+        }
+    }
+
+    private void setUpViewPagerAndTabLayout() {
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("City"));
+        tabLayout.addTab(tabLayout.newTab().setText("AirPort"));
+        tabLayout.addTab(tabLayout.newTab().setText("HD"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
         googleApiClient.connect();
+        authencation();
     }
 
     @Override
@@ -201,9 +263,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         super.onStop();
     }
-
-    private int count;
-    private List<Marker> markerList;
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

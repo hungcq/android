@@ -17,7 +17,6 @@
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
         android:scaleType="centerCrop"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
         android:layout_gravity="center_horizontal" />
 
     <TextView
@@ -25,13 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Raijin Thunderkeg"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:id="@+id/tv_user_email"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="android.studio@android.com" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
