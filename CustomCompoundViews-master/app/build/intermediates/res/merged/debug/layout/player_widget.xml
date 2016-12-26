@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/player_bg"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <ImageView
+        android:id="@+id/btnPrev"
+        style="@style/PlayerButtonsStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_prev_selector"/>
+
+    <ImageView
+        android:id="@+id/btnPlay"
+        style="@style/PlayerButtonsStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_play_selector"/>
+
+    <ImageView
+        android:id="@+id/btnPause"
+        style="@style/PlayerButtonsStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_pause_selector"/>
+
+    <ImageView
+        android:id="@+id/btnStop"
+        style="@style/PlayerButtonsStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_stop_selector"/>
+
+    <ImageView
+        android:id="@+id/btnNext"
+        style="@style/PlayerButtonsStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_next_selector"/>
+</LinearLayout>
