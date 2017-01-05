@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private RelativeLayout bottomLayout;
+    private ViewGroup bottomLayout;
     private CustomInfoBox pickUpInfoBox;
     private CustomInfoBox dropOffInfoBox;
 
@@ -155,13 +156,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         myLocationButton = (ImageButton) findViewById(R.id.btn_my_location);
         myLocationButton.setOnClickListener(this);
 
-        userAvatar = (ImageView) findViewById(R.id.img_user_avatar);
-        userName = (TextView) findViewById(R.id.tv_user_name);
-        userEmail = (TextView) findViewById(R.id.tv_user_email);
+        userAvatar = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_user_avatar);
+        userName = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tv_user_name);
+        userEmail = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tv_user_email);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        bottomLayout = (RelativeLayout) findViewById(R.id.bottom_layout);
+        bottomLayout = (ViewGroup) findViewById(R.id.bottom_layout);
         setUpViewPagerAndTabLayout();
 
         pickUpInfoBox = (CustomInfoBox) findViewById(R.id.info_box_pick_up);
@@ -206,15 +207,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private void authencation() {
+    private void authenticate() {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         if (firebaseUser == null) {
             startActivity(new Intent(this, SignInActivity.class));
             finish();
         } else {
-            userName.setText(firebaseUser.getDisplayName());
-            userEmail.setText(firebaseUser.getEmail());
+            if (firebaseUser.getDisplayName() != null)
+                userName.setText(firebaseUser.getDisplayName());
+            if (firebaseUser.getEmail() != null)
+                userEmail.setText(firebaseUser.getEmail());
             if (firebaseUser.getPhotoUrl() != null) {
                 Picasso.with(this).load(firebaseUser.getPhotoUrl()).into(userAvatar);
             }
@@ -253,13 +256,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onStart() {
         super.onStart();
         googleApiClient.connect();
-        authencation();
+        authenticate();
     }
 
     @Override
     protected void onStop() {
         if (googleApiClient != null && googleApiClient.isConnected()) {
             googleApiClient.disconnect();
+        }
+        for (Map.Entry<String, TaxiInfo> entry : taxiInfoMap.entrySet()) {
+            Map<String, Object> map = new HashMap<>();
+            map.put("angle", ((double)((TaxiInfo) entry.getValue()).getMarker().getRotation()));
+            taxiChildReference.child(entry.getKey()).updateChildren(map);
         }
         super.onStop();
     }

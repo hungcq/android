@@ -34,23 +34,26 @@
         android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_5sdp" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_layout"
         android:layout_alignParentBottom="true"
+        android:orientation="vertical"
         android:background="@color/colorWhiteTransparent">
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_80sdp" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/view_pager" />
-    </RelativeLayout>
+            android:background="#CCe0e0e0"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp" />
+
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/btn_my_location"

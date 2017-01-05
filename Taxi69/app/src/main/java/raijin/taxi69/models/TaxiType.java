@@ -7,10 +7,12 @@ package raijin.taxi69.models;
 public class TaxiType {
     private int category;
     private String photoUrl;
+    private String name;
 
-    public TaxiType(int category, String photoUrl) {
+    public TaxiType(int category, String photoUrl, String name) {
         this.category = category;
         this.photoUrl = photoUrl;
+        this.name = name;
     }
 
     public TaxiType() {
@@ -30,5 +32,13 @@ public class TaxiType {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
