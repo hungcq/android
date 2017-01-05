@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         for (Map.Entry<String, TaxiInfo> entry : taxiInfoMap.entrySet()) {
             Map<String, Object> map = new HashMap<>();
-            map.put("angle", ((double)((TaxiInfo) entry.getValue()).getMarker().getRotation()));
+            map.put("angle", ((double) ((TaxiInfo) entry.getValue()).getMarker().getRotation()));
             taxiChildReference.child(entry.getKey()).updateChildren(map);
         }
         super.onStop();
@@ -393,7 +393,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void expandMap() {
         ObjectAnimator transToolbar = ObjectAnimator.ofFloat(toolbar, View.TRANSLATION_Y, -toolbar.getHeight());
         ObjectAnimator transResizeButton = ObjectAnimator.ofFloat(resizeButton, View.TRANSLATION_Y, -toolbar.getHeight());
-        ObjectAnimator transMyLocationButton = ObjectAnimator.ofFloat(myLocationButton, View.TRANSLATION_Y, myLocationButton.getHeight());
+        ObjectAnimator transMyLocationButton = ObjectAnimator.ofFloat(myLocationButton, View.TRANSLATION_Y, bottomLayout.getHeight() * 2 / 3);
         ObjectAnimator transBottomLayout = ObjectAnimator.ofFloat(bottomLayout, View.TRANSLATION_Y, bottomLayout.getHeight());
         ObjectAnimator transPickupBox = ObjectAnimator.ofFloat(pickUpInfoBox, View.TRANSLATION_Y, -toolbar.getHeight());
         ObjectAnimator transDropoffBox = ObjectAnimator.ofFloat(dropOffInfoBox, View.TRANSLATION_Y, -toolbar.getHeight());
@@ -449,7 +449,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             currentActiveMarker.remove();
         }
         MarkerOptions options = new MarkerOptions().position(latLng);
-        options.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker));
+        options.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_place_black_24dp));
         currentActiveMarker = map.addMarker(options);
         location = new Location("");
         location.setLatitude(latLng.latitude);
@@ -479,6 +479,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         location.setLongitude(marker.getPosition().longitude);
         drawPolyline(currentLocation, location);
         setAddress(pickUpInfoBox, marker.getPosition());
+        for (Map.Entry entry : taxiInfoMap.entrySet()) {
+            moveMarker(((TaxiInfo) entry.getValue()).getMarker(), new TaxiInfo(12000, 1,
+                    testPointList.get((int) (Math.random() * testPointList.size())).getLatitude(),
+                    testPointList.get((int) (Math.random() * testPointList.size())).getLongitude(), 0));
+        }
         return false;
     }
 
@@ -527,7 +532,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void addCarMarker(TaxiInfo taxiInfo) {
         MarkerOptions options = new MarkerOptions().position(new LatLng(taxiInfo.getLatitude(), taxiInfo.getLongitude()));
-        options.icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.ic_car, 30, 60)));
+        options.icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.ic_car, Utils.getScreenWidth(this) / 30, Utils.getScreenWidth(this) / 15)));
         Marker marker = map.addMarker(options);
         marker.setRotation((float) taxiInfo.getAngle());
         taxiInfo.setMarker(marker);

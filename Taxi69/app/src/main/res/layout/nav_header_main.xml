@@ -16,8 +16,7 @@
         android:id="@+id/img_user_avatar"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center_horizontal" />
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/tv_user_name"
