@@ -3,6 +3,8 @@ package raijin.session22_firebasecloudmessage;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

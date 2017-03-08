@@ -19,7 +19,7 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/BlueBoldTextView"
+            style="@style/BlackBoldTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pick-up Point"
@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:singleLine="true"
+            android:maxLines="1"
             android:text="Ngõ 226 Lê Duẩn, P.Trung Phụng, Hà Nội"
             android:textColor="#000000"
             android:textSize="@dimen/_12sdp"

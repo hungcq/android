@@ -14,7 +14,7 @@ import raijin.taxi69.R;
  * Created by 1918 on 22-Dec-16.
  */
 
-public class CustomInfoBox extends LinearLayout implements View.OnClickListener {
+public class CustomInfoBox extends LinearLayout {
 
     private ViewGroup root;
     private ImageView pointImageView;
@@ -42,8 +42,6 @@ public class CustomInfoBox extends LinearLayout implements View.OnClickListener 
         pointImageView = (ImageView) root.findViewById(R.id.img_point);
         titleTextView = (TextView) root.findViewById(R.id.tv_title);
         addressTextView = (TextView) root.findViewById(R.id.tv_address);
-
-        root.setOnClickListener(this);
     }
 
     public void initData(int imageResource, String title, String address) {
@@ -54,10 +52,5 @@ public class CustomInfoBox extends LinearLayout implements View.OnClickListener 
 
     public void setAddress(String address) {
         addressTextView.setText(address);
-    }
-
-    @Override
-    public void onClick(View view) {
-
     }
 }

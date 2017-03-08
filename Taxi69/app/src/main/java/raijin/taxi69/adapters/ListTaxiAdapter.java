@@ -19,12 +19,12 @@ import raijin.taxi69.models.TaxiType;
  * Created by 1918 on 27-Dec-16.
  */
 
-public class RecyclerViewListTaxiAdapter extends RecyclerView.Adapter<RecyclerViewListTaxiAdapter.MyViewHolder> {
+public class ListTaxiAdapter extends RecyclerView.Adapter<ListTaxiAdapter.MyViewHolder> {
 
     private Context context;
     private List<TaxiType> taxiTypeList;
 
-    public RecyclerViewListTaxiAdapter(List<TaxiType> taxiTypeList) {
+    public ListTaxiAdapter(List<TaxiType> taxiTypeList) {
         this.taxiTypeList = taxiTypeList;
     }
 
@@ -50,7 +50,7 @@ public class RecyclerViewListTaxiAdapter extends RecyclerView.Adapter<RecyclerVi
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         ImageView photo;
-        public MyViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.tv_type_name);
             photo = (ImageView) itemView.findViewById(R.id.img_type);

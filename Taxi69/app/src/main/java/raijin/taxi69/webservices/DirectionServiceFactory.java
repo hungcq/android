@@ -11,13 +11,16 @@ public class DirectionServiceFactory {
 
     private Retrofit retrofit;
     private static final String BASE_URL = "https://maps.googleapis.com";
-    private static DirectionServiceFactory inst = new DirectionServiceFactory();
+    private static DirectionServiceFactory inst;
 
     public static DirectionServiceFactory getInst() {
+        if (inst == null) {
+            inst = new DirectionServiceFactory();
+        }
         return inst;
     }
 
-    public DirectionServiceFactory() {
+    private DirectionServiceFactory() {
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
     }
 

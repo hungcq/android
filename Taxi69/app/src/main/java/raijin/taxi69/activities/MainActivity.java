@@ -27,7 +27,6 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -166,10 +165,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setUpViewPagerAndTabLayout();
 
         pickUpInfoBox = (CustomInfoBox) findViewById(R.id.info_box_pick_up);
-        pickUpInfoBox.initData(R.drawable.blue_point, "Pick-up point", Utils.getAddressFromLatLng(this, new LatLng(DEFAULT_LAT, DEFAULT_LNG)));
+        pickUpInfoBox.initData(R.drawable.point_black, "Pick-up point", Utils.getAddressFromLatLng(this, new LatLng(DEFAULT_LAT, DEFAULT_LNG)));
         pickUpInfoBox.setOnClickListener(this);
         dropOffInfoBox = (CustomInfoBox) findViewById(R.id.info_box_drop_off);
-        dropOffInfoBox.initData(R.drawable.yellow_point, "Drop-off point", Utils.getAddressFromLatLng(this, new LatLng(DEFAULT_LAT, DEFAULT_LNG)));
+        dropOffInfoBox.initData(R.drawable.point_grey, "Drop-off point", Utils.getAddressFromLatLng(this, new LatLng(DEFAULT_LAT, DEFAULT_LNG)));
         dropOffInfoBox.setOnClickListener(this);
 
         taxiChildReference = FirebaseDatabase.getInstance().getReference().child(Constants.CHILD_TAXI);
@@ -386,6 +385,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     resizeButton.setImageResource(R.drawable.ic_expand);
                     shrinkMap();
                 }
+                break;
+            case R.id.info_box_pick_up:
+                Bundle bundle = new Bundle();
+                bundle.putDouble(Constants.INTENT_LATITUDE, currentLocation.getLatitude());
+                bundle.putDouble(Constants.INTENT_LONGITUDE, currentLocation.getLongitude());
+                startActivity(new Intent(MainActivity.this, PlaceSearchActivity.class).putExtras(bundle));
                 break;
         }
     }

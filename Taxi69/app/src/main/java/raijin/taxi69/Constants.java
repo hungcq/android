@@ -9,4 +9,7 @@ public class Constants {
     public static final String CHILD_DRIVER = "drivers";
     public static final String CHILD_TYPE = "types";
     public static final String CHILD_TEST_POINT = "points";
+
+    public static final String INTENT_LATITUDE = "latitude";
+    public static final String INTENT_LONGITUDE = "longitude";
 }

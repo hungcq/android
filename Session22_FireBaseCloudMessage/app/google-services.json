@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "723756388951",
-    "firebase_url": "https://fir-cloudmessage-dc850.firebaseio.com",
-    "project_id": "fir-cloudmessage-dc850",
-    "storage_bucket": "fir-cloudmessage-dc850.appspot.com"
+    "project_number": "667766341786",
+    "firebase_url": "https://fcmtest-858cc.firebaseio.com",
+    "project_id": "fcmtest-858cc",
+    "storage_bucket": "fcmtest-858cc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:723756388951:android:6cdf33ea1a273f87",
+        "mobilesdk_app_id": "1:667766341786:android:6cdf33ea1a273f87",
         "android_client_info": {
           "package_name": "raijin.session22_firebasecloudmessage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "723756388951-a08ur40h36658s0c8uhfpui568vgh84i.apps.googleusercontent.com",
+          "client_id": "667766341786-lfqpde8bhusg8e7oipi8iu4fr8s1t15c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "raijin.session22_firebasecloudmessage",
-            "certificate_hash": "C6B541085E7C388B6F76A80B9756CF39D91DA421"
+            "certificate_hash": "904E09AD4444FCC623CC3866C6777D62650F7D02"
           }
         },
         {
-          "client_id": "723756388951-9dbh960fcn448vrjjcv76sjrt3qvhnc2.apps.googleusercontent.com",
+          "client_id": "667766341786-0ni40u9tf831u2982hiokr170n3d24np.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBXWr5xITTHAG3Nxt_2cYn7F-At3wRcaHU"
+          "current_key": "AIzaSyBJqejWNll2J0oXTKoHHL1FLMjvOMd97Xg"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "723756388951-9dbh960fcn448vrjjcv76sjrt3qvhnc2.apps.googleusercontent.com",
+              "client_id": "667766341786-0ni40u9tf831u2982hiokr170n3d24np.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
