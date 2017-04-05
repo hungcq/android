@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addListener();
 
         //
-        IntentFilter intentFilter = new IntentFilter(MyReceiver.RESPONE_ACTION);
+        IntentFilter intentFilter = new IntentFilter(MyReceiver.RESPONSE_ACTION);
         intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
 
         MyReceiver receiver = new MyReceiver();
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public class MyReceiver extends BroadcastReceiver {
-        public static final String RESPONE_ACTION = "android.intent.action.MAIN";
+        public static final String RESPONSE_ACTION = "android.intent.action.MAIN";
 
         @Override
         public void onReceive(Context context, Intent intent) {

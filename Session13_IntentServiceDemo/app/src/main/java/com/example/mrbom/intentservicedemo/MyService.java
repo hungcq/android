@@ -50,7 +50,7 @@ public class MyService extends IntentService {
 
         Intent intent1 = new Intent();
         intent1.putExtra(MainActivity.KEY, result);
-        intent1.setAction(MainActivity.MyReceiver.RESPONE_ACTION);
+        intent1.setAction(MainActivity.MyReceiver.RESPONSE_ACTION);
         intent1.addCategory(Intent.CATEGORY_DEFAULT);
         sendBroadcast(intent1);
     }
