@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_pressed="true">
+    <layer-list>
+      <item>
+        <shape android:shape="oval">
+          <solid android:color="@color/white"/>
+        </shape>
+      </item>
+      <item>
+        <shape android:shape="oval">
+          <solid android:color="#4D000000"/>
+        </shape>
+      </item>
+    </layer-list>
+  </item>
+  <item>
+    <shape android:shape="oval">
+      <solid android:color="@color/white"/>
+    </shape>
+  </item>
+</selector>
+<!-- From: file:/C:/Users/Admin/Documents/android/ArcLayout/demo/src/main/res/drawable/path_white_oval.xml -->

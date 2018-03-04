@@ -1,0 +1,26 @@
+int attr arc_angle 0x7f010006
+int attr arc_axisRadius 0x7f010003
+int attr arc_color 0x7f010001
+int attr arc_freeAngle 0x7f010004
+int attr arc_origin 0x7f010000
+int attr arc_radius 0x7f010002
+int attr arc_reverseAngle 0x7f010005
+int id bottom 0x7f020000
+int id center 0x7f020001
+int id center_horizontal 0x7f020002
+int id center_vertical 0x7f020003
+int id end 0x7f020004
+int id left 0x7f020005
+int id right 0x7f020006
+int id start 0x7f020007
+int id top 0x7f020008
+int[] styleable arc_ArcLayout { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005 }
+int styleable arc_ArcLayout_arc_axisRadius 3
+int styleable arc_ArcLayout_arc_color 1
+int styleable arc_ArcLayout_arc_freeAngle 4
+int styleable arc_ArcLayout_arc_origin 0
+int styleable arc_ArcLayout_arc_radius 2
+int styleable arc_ArcLayout_arc_reverseAngle 5
+int[] styleable arc_ArcLayout_Layout { 0x7f010000, 0x7f010006 }
+int styleable arc_ArcLayout_Layout_arc_angle 1
+int styleable arc_ArcLayout_Layout_arc_origin 0
