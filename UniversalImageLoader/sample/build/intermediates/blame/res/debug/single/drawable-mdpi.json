@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_empty.png",
+        "source": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\src\\main\\res\\drawable-mdpi\\ic_empty.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_stub.png",
+        "source": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\src\\main\\res\\drawable-mdpi\\ic_stub.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error.png",
+        "source": "C:\\Users\\Admin\\Documents\\android\\Universal-Image-Loader\\sample\\src\\main\\res\\drawable-mdpi\\ic_error.png"
+    }
+]
