@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Date"
+            android:layout_margin="5dp"
+            android:textSize="@dimen/tiny_text_size" />
+
+        <TextView
+            android:textSize="@dimen/normal_text_size"
+            android:textColor="#000000"
+            android:padding="5dp"
+            android:id="@+id/et_reminder_pick_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="01-01-2016"
+            android:background="@drawable/custom_text_view_reminder"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Time"
+            android:layout_margin="5dp"
+            android:textSize="@dimen/tiny_text_size" />
+
+        <TextView
+            android:textSize="@dimen/normal_text_size"
+            android:textColor="#000000"
+            android:id="@+id/et_reminder_pick_time"
+            android:layout_width="0dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_text_view_reminder"
+            android:layout_weight="4"
+            android:text="00:00" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_reminder_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set None"/>
+
+        <Button
+            android:id="@+id/bt_reminder_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Reminder" />
+    </LinearLayout>
+</LinearLayout>

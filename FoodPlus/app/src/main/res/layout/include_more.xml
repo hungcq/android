@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:id="@+id/tvLoadMore"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_15sdp"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:background="@drawable/bg_title_green"
+    android:gravity="center"
+    android:text="Xem thêm"
+    android:textColor="@color/white"
+    android:textSize="@dimen/_8sdp"
+    android:textStyle="bold"
+    android:visibility="gone"/>

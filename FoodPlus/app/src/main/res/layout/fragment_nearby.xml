@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fragment_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageButton
+        android:id="@+id/button_resize"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_87sdp"
+        android:background="@drawable/bg_round_white_transparent"
+        android:padding="@dimen/_2sdp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_expand"/>
+
+    <ImageButton
+        android:id="@+id/button_locate"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/_80sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/bg_round_white_transparent"
+        android:padding="@dimen/_2sdp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_locate"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_87sdp"
+        android:background="@drawable/bg_round_white_transparent">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+        <LinearLayout
+            android:id="@+id/layout_below"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/_2sdp"
+            android:visibility="gone">
+            <!--          <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="Xu hướng tìm kiếm:"
+                          style="@style/BlackBoldTextView"
+                          android:textAllCaps="true"
+                          android:textSize="@dimen/_9sdp"
+                          android:layout_marginLeft="@dimen/_5sdp"/>
+                      <android.support.v7.widget.RecyclerView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/recycler_view_find_more"/>-->
+        </LinearLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

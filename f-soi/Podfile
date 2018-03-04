@@ -1,0 +1,7 @@
+source 'https://github.com/CocoaPods/Specs.git'
+target ‘Food+’ do
+	pod 'GoogleMaps’
+	pod 'JSONModel'
+	pod 'SDWebImage', '~>3.8'
+	pod 'REFrostedViewController', '~> 2.4'
+end

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgItemThumb"
+        android:layout_width="@dimen/_77sdp"
+        android:layout_height="@dimen/_72sdp"
+        app:riv_corner_radius="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_2sdp"
+        android:scaleType="centerCrop"/>
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Display">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_show_image"
+            android:title="@string/pref_title_show_image" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_show_reminder"
+            android:title="@string/pref_title_show_reminder" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_show_location"
+            android:title="@string/pref_title_show_location" />
+        <ListPreference
+            android:key="@string/pref_key_sort"
+            android:title="@string/pref_title_sort"
+            android:dialogTitle="@string/pref_title_sort"
+            android:entries="@array/pref_option_sort"
+            android:entryValues="@array/pref_option_sort_values"
+            android:defaultValue="priority" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Personalization">
+        <raijin.doitlater.fragments.ThemePickerDialogPreference
+            android:defaultValue="@string/theme_default"
+            android:dialogTitle="@string/pref_title_theme_color"
+            android:key="@string/pref_key_theme_color"
+            android:title="@string/pref_title_theme_color" />
+    </PreferenceCategory>
+</PreferenceScreen>

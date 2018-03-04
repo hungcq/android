@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6ea516</color>
+    <color name="colorPrimaryDark">#508003</color>
+    <color name="colorAccent">#92b853</color>
+    <color name="colorMainLight">#a8c873</color>
+    <color name="colorMain">#6ea516</color>
+    <color name="colorMainTransparent">#cc6ea516</color>
+    <color name="foodIconColor">#ccd71f</color>
+    <color name="restaurantIconColor">#fa9289</color>
+    <color name="coffeeIconColor">#ffc400</color>
+    <color name="recipeIconColor">#cc66ff</color>
+    <color name="spaIconColor">#61d8d6</color>
+    <color name="eventIconColor">#ff8549</color>
+    <color name="myPinkColor">#fc906c</color>
+    <color name="myPinkDarkColor">#f0721e</color>
+    <color name="fragmentBackgroundColor">#e4e4e4</color>
+    <color name="imageBackground">#d6daa8</color>
+    <color name="whiteTransparent">#a0ffffff</color>
+    <color name="whiteLightTransparent">#f2ffffff</color>
+    <color name="blackTransparent">#89000000</color>
+    <color name="colorBackground">#eaeaea</color>
+
+    <color name="black">#000000</color>
+    <color name="colorFont">#333</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#eaeaea</color>
+    <color name="divider">#727272</color>
+    <color name="transparent">#00000000</color>
+    <color name="disable">#999999</color>
+
+    <!--Android Color-->
+    <item name="Red" type="color">#F44336</item>
+    <item name="Red100" type="color">#FFCDD2</item>
+    <item name="Red700" type="color">#D32F2F</item>
+    <item name="RedA200" type="color">#FF5252</item>
+    <item name="Pink" type="color">#E91E63</item>
+    <item name="Pink700" type="color">#C2185B</item>
+    <item name="PinkA200" type="color">#FF4081</item>
+    <item name="Purple" type="color">#9C27B0</item>
+    <item name="Purple700" type="color">#7B1FA2</item>
+    <item name="PurpleA200" type="color">#E040FB</item>
+    <item name="DeepPurple" type="color">#673AB7</item>
+    <item name="DeepPurple700" type="color">#512DA8</item>
+    <item name="DeepPurpleA200" type="color">#7C4DFF</item>
+    <item name="Indigo" type="color">#3F51B5</item>
+    <item name="Indigo700" type="color">#303F9F</item>
+    <item name="IndigoA200" type="color">#536DFE</item>
+    <item name="Blue" type="color">#2196F3</item>
+    <item name="Blue100" type="color">#BBDEFB</item>
+    <item name="Blue300" type="color">#64B5F6</item>
+    <item name="Blue700" type="color">#1976d2</item>
+    <item name="Blue800" type="color">#1565C0</item>
+    <item name="Blue900" type="color">#0D47A1</item>
+    <item name="BlueA200" type="color">#448AFF</item>
+    <item name="LightBlue" type="color">#03A9F4</item>
+    <item name="LightBlue700" type="color">#0288D1</item>
+    <item name="LightBlueA200" type="color">#40C4FF</item>
+    <item name="Cyan" type="color">#00BCD4</item>
+    <item name="Cyan50" type="color">#E0F7FA</item>
+    <item name="Cyan700" type="color">#0097A7</item>
+    <item name="CyanA200" type="color">#18FFFF</item>
+    <item name="Teal" type="color">#009688</item>
+    <item name="Teal700" type="color">#00796B</item>
+    <item name="TealA200" type="color">#64FFDA</item>
+    <item name="Green" type="color">#4CAF50</item>
+    <item name="Green700" type="color">#388E3C</item>
+    <item name="GreenA200" type="color">#69F0AE</item>
+    <item name="LightGreen" type="color">#8BC34A</item>
+    <item name="LightGreen700" type="color">#689F38</item>
+    <item name="LightGreenA200" type="color">#B2FF59</item>
+    <item name="Lime" type="color">#CDDC39</item>
+    <item name="Lime700" type="color">#AFB42B</item>
+    <item name="LimeA200" type="color">#EEFF41</item>
+    <item name="Yellow" type="color">#FFEB3B</item>
+    <item name="Yellow700" type="color">#FBC02D</item>
+    <item name="YellowA200" type="color">#FFFF00</item>
+    <item name="Amber" type="color">#FFC107</item>
+    <item name="Amber100" type="color">#FFECB3</item>
+    <item name="Amber700" type="color">#FFA000</item>
+    <item name="AmberA200" type="color">#FFD740</item>
+    <item name="Orange" type="color">#FF9800</item>
+    <item name="Orange700" type="color">#F57C00</item>
+    <item name="OrangeA200" type="color">#FFAB40</item>
+    <item name="DeepOrange" type="color">#FF5722</item>
+    <item name="DeepOrange700" type="color">#E64A19</item>
+    <item name="DeepOrangeA200" type="color">#FF6E40</item>
+    <item name="Brown" type="color">#795548</item>
+    <item name="Brown700" type="color">#5D4037</item>
+    <item name="Grey" type="color">#9E9E9E</item>
+    <item name="Grey100" type="color">#f5f5f5</item>
+    <item name="Grey300" type="color">#E0E0E0</item>
+    <item name="Grey400" type="color">#BDBDBD</item>
+    <item name="Grey700" type="color">#616161</item>
+    <item name="BlueGrey" type="color">#607D8B</item>
+    <item name="BlueGrey100" type="color">#cfd8dc</item>
+    <item name="BlueGrey200" type="color">#b0bec5</item>
+    <item name="BlueGrey300" type="color">#90a4ae</item>
+    <item name="BlueGrey400" type="color">#78909c</item>
+    <item name="BlueGrey700" type="color">#455A64</item>
+</resources>

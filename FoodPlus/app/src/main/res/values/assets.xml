@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="img1">http://launuong-hiroshima.com/wp-content/uploads/2014/07/6235831243_ba46458d17_o-1-1024x683.jpg</string>
+    <string name="img2">http://launuong-hiroshima.com/wp-content/uploads/2014/07/4435938839_0e86fdba04_o1-1-1024x680.jpg</string>
+    <string name="img3">http://launuong-hiroshima.com/wp-content/uploads/2013/06/7623705344_3567630aa8_o-1-1024x678.jpg</string>
+    <string name="img4">http://launuong-hiroshima.com/wp-content/uploads/2014/07/3723771474_b2e8636d45_o-1-1024x685.jpg</string>
+    <string name="img5">http://launuong-hiroshima.com/wp-content/uploads/2014/07/9636932271_f178f5bc2e_o-1-1024x680.jpg</string>
+    <string name="img6">http://launuong-hiroshima.com/wp-content/uploads/2014/05/Pasta-Ebi-Tempura-To-Gomatare-1.jpg</string>
+    <string name="img7">http://launuong-hiroshima.com/wp-content/uploads/2011/06/Loaded-Baked-Potato-Pizza-Recipe-1-1024x779.jpg</string>
+    <string name="img8">http://launuong-hiroshima.com/wp-content/uploads/2013/06/shutterstock_179643251-1.jpg</string>
+    <string name="img9">http://launuong-hiroshima.com/wp-content/uploads/2014/07/3723771474_b2e8636d45_o-1-1024x685.jpg</string>
+    <string name="img10">http://launuong-hiroshima.com/wp-content/uploads/2011/05/Chicken-Wings-1-1024x734.jpg</string>
+    <string name="img11">http://launuong-hiroshima.com/wp-content/uploads/2011/06/5732555949_4ec706dd58_o-1-1024x768.jpg</string>
+    <string name="img12">http://launuong-hiroshima.com/wp-content/uploads/2014/07/5638487457_ce6335f841_o-1-1024x678.jpg</string>
+
+    <string name="avatar1">http://mdcop.vn/wp-content/uploads/2016/07/avatar2-180x180.png</string>
+    <string name="avatar2">http://mdcop.vn/wp-content/uploads/2016/07/avatar5-180x180.png</string>
+    <string name="avatar3">http://mdcop.vn/wp-content/uploads/2016/07/avatar3-180x180.png</string>
+    <string name="avatar4">http://mdcop.vn/wp-content/uploads/2016/07/avatar4-180x180.png</string>
+    <string name="avatar5">http://shopminhvu.com/wp-content/uploads/2016/07/team3.jpg</string>
+    <string name="avatar6">http://shopminhvu.com/wp-content/uploads/2016/07/team4.jpg</string>
+    <string name="avatar7">http://shopminhvu.com/wp-content/uploads/2016/07/team5.jpg</string>
+
+</resources>

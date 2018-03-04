@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e4e4e4"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_simple" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_43sdp"
+        android:layout_marginRight="@dimen/_43sdp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_grey_light"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_user_black" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="241dp"
+                android:layout_height="@dimen/_35sdp"
+                android:background="#f4f4f4"
+                android:hint="Email hoặc tài khoản"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="@dimen/_7sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_23sdp"
+            android:background="@drawable/bg_round_grey_light"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_lock_black" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="#f4f4f4"
+                android:hint="Mật khẩu"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="@dimen/_7sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLostPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:gravity="center"
+            android:text="Quên mật khẩu"
+            android:textSize="@dimen/_11sdp"
+            style="@style/SelectableBackground"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_42sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/btnFacebookLogin"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginRight="@dimen/_42sdp"
+                android:src="@drawable/ic_facebook"
+                app:civ_border_width="0dp"
+                style="@style/SelectableBackground">
+
+            </com.mikhaellopez.circularimageview.CircularImageView>
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/btnGooglePlusLogin"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:src="@drawable/ic_gplus"
+                app:civ_border_width="0dp"
+                style="@style/SelectableBackground"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnLoginNormal"
+            style="@style/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_weight="1"
+            android:background="@drawable/selectable_bg_pink"
+            android:gravity="center"
+            android:text="Đăng nhập"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            style="@style/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_weight="1"
+            android:background="@drawable/selectable_bg_main_color"
+            android:gravity="center"
+            android:text="Đăng ký" />
+
+    </LinearLayout>
+</LinearLayout>

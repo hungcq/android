@@ -1,0 +1,13 @@
+<resources>
+    <bool name="isTablet">false</bool>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="corner">@dimen/_10sdp</dimen>
+    <dimen name="corner_small">@dimen/_3sdp</dimen>
+    <dimen name="minusCorner">@dimen/_minus10sdp</dimen>
+    <dimen name="toolbar_top_padding">@dimen/_10sdp</dimen>
+    <dimen name="toolbar_left_padding">@dimen/_10sdp</dimen>
+    <dimen name="menu_left_padding">@dimen/_5sdp</dimen>
+    <dimen name="menu_width">@dimen/_160sdp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

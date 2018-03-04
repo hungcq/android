@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="content" format="string"/>
+    <attr name="title" format="string"/>
+    <attr name="description" format="string"/>
+    <attr name="rating" format="string"/>
+    <attr name="star" format="string"/>
+    <attr name="favourite" format="string"/>
+    <attr name="comment" format="string"/>
+    <attr name="pin" format="string"/>
+    <attr name="map" format="string"/>
+    <declare-styleable name="CustomReview">
+        <attr name="title"/>
+        <attr name="description"/>
+        <attr name="rating"/>
+    </declare-styleable>
+    <declare-styleable name="CustomShow">
+        <attr name="title"/>
+        <attr name="description"/>
+        <attr name="rating"/>
+    </declare-styleable>
+    <declare-styleable name="CustomGallery">
+        <attr name="title"/>
+        <attr name="description"/>
+        <attr name="rating"/>
+        <attr name="star"/>
+        <attr name="favourite"/>
+        <attr name="comment"/>
+        <attr name="pin"/>
+    </declare-styleable>
+    <declare-styleable name="CustomBigview">
+        <attr name="title"/>
+        <attr name="description"/>
+        <attr name="rating"/>
+        <attr name="star"/>
+        <attr name="comment"/>
+        <attr name="pin"/>
+        <attr name="favourite"/>
+        <attr name="map"/>
+    </declare-styleable>
+    <declare-styleable name="CustomDetail">
+        <attr name="title"/>
+        <attr name="description"/>
+        <attr name="content"/>
+        <attr name="rating"/>
+    </declare-styleable>
+    <declare-styleable name="InfoText" />
+    <declare-styleable name="FilterItem">
+        <attr name="icon"/>
+        <attr name="content" />
+    </declare-styleable>
+    <declare-styleable name="CustomSurvey">
+        <attr name="title"/>
+    </declare-styleable>
+</resources>

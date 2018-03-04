@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/danh_muc">
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_home_item"
+                android:icon="@drawable/ic_home"
+                android:title="@string/trang_chu"/>
+            <item
+                android:id="@+id/nav_event_item"
+                android:icon="@drawable/icon_event_white"
+                android:title="@string/su_kien_extended"/>
+            <item
+                android:id="@+id/nav_food_item"
+                android:icon="@drawable/icon_food_white"
+                android:title="@string/thuc_pham_extended"/>
+            <item
+                android:id="@+id/nav_recipe_item"
+                android:icon="@drawable/icon_recipe_white"
+                android:title="@string/nau_an_extended"/>
+            <item
+                android:id="@+id/nav_knife_item"
+                android:icon="@drawable/icon_knife_white"
+                android:title="@string/mon_an"/>
+            <item
+                android:id="@+id/nav_coffee_item"
+                android:icon="@drawable/icon_coffee_white"
+                android:title="@string/do_uong"/>
+            <item
+                android:id="@+id/nav_spa_item"
+                android:icon="@drawable/icon_spa_white"
+                android:title="@string/khoe_dep_extended"/>
+        </group>
+    </item>
+
+    <item android:title="Khác">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_user_item"
+                    android:icon="@drawable/ic_user"
+                    android:title="@string/thong_tin_tai_khoan"/>
+                <item
+                    android:id="@+id/nav_pin_item"
+                    android:icon="@drawable/ic_pin_white"
+                    android:title="@string/bai_ghim"/>
+
+                <item
+                    android:id="@+id/nav_alarm_item"
+                    android:icon="@drawable/ic_alarm"
+                    android:title="@string/thong_bao"/>
+                <item
+                    android:id="@+id/nav_facebook_fanpage"
+                    android:icon="@drawable/ic_facebook_green"
+                    android:title="@string/facebook_fanpage"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:paddingBottom="@dimen/_5sdp"
+             android:paddingLeft="@dimen/_5sdp"
+             android:paddingRight="@dimen/_5sdp"
+             android:paddingTop="@dimen/_87sdp"
+             tools:context="com.online.foodplus.fragments.PopularFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPopular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+
+</FrameLayout>

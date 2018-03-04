@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/to_do_menu_item"
+            android:icon="@drawable/ic_error_black_48dp"
+            android:title="@string/to_do_task" />
+        <item
+            android:id="@+id/completed_menu_item"
+            android:icon="@drawable/ic_check_circle_black_48dp"
+            android:title="@string/completed_task" />
+        <item
+            android:id="@+id/all_menu_item"
+            android:icon="@drawable/all_note_icon"
+            android:title="@string/all_tasks" />
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/preference"
+                    android:icon="@drawable/ic_settings_black_48dp"
+                    android:title="Preference" />
+                <item
+                    android:id="@+id/about"
+                    android:icon="@drawable/ic_info_outline_black_48dp"
+                    android:title="About" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

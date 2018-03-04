@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.online.foodplus.widgets.ExpandableHeightGridView android:id="@+id/gvGridSimple"
+                                                      xmlns:android="http://schemas.android.com/apk/res/android"
+                                                      android:layout_width="match_parent"
+                                                      android:layout_height="match_parent"
+                                                      android:background="@color/white"
+                                                      android:horizontalSpacing="@dimen/_5sdp"
+                                                      android:numColumns="4"
+                                                      android:padding="@dimen/_5sdp"
+                                                      android:stretchMode="columnWidth"
+                                                      android:verticalSpacing="@dimen/_5sdp"/>

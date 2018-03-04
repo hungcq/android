@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">FoodPlus</string>
+    <string name="search_hint">Nhà hàng, công thức nấu ăn,...</string>
+    <string name="google_maps_key">AIzaSyCXjJ97PZa5O3gu60BJ-98GUPPcQL4mrKw</string>
+    <string name="google_direction_key">AIzaSyCXjJ97PZa5O3gu60BJ-98GUPPcQL4mrKw</string>
+    <string name="nau_an">Nấu ăn</string>
+    <string name="nau_an_extended">Công thức nấu ăn</string>
+    <string name="do_an">Đồ ăn</string>
+    <string name="mon_an">Món ăn</string>
+    <string name="su_kien">Sự kiện</string>
+    <string name="su_kien_extended">Sự kiện, khuyến mại</string>
+    <string name="thuc_pham">Thực phẩm</string>
+    <string name="thuc_pham_extended">Thực phẩm sạch</string>
+    <string name="do_uong">Đồ uống</string>
+    <string name="khoe_dep">Khỏe đẹp</string>
+    <string name="khoe_dep_extended">Khỏe và đẹp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">1874010682885491</string>
+    <string name="dang_nhap">Đăng nhập</string>
+    <string name="dia_diem_noi_bat">Địa điểm nổi bật:</string>
+    <string name="xem_them">Xem thêm</string>
+
+    <string name="more_arrow">Xem thêm >></string>
+    <string name="please_wait">Xin đợi trong giây lát</string>
+    <string name="updating">Đang cập nhật...</string>
+    <string name="quick_search">Tìm nhanh...</string>
+    <string name="all">Tất cả</string>
+    <string name="login">Đăng nhập</string>
+    <string name="about_us">Food+ Mobile App</string>
+    <string name="copyright">Copyright © 2017 - iDTV</string>
+    <string name="send_review_success">Cảm ơn đánh giá của bạn</string>
+    <string name="please_retry_later">Có lỗi, xin hãy thử lại sau</string>
+    <string name="dont_remind">Không nhắc lại</string>
+    <string name="close">Đóng</string>
+    <string name="not_connected_internet">Không có kết nối mạng nào</string>
+    <string name="no_data">Không có dữ liệu</string>
+    <string name="write_first_review">Viết đánh giá đầu tiên</string>
+    <string name="write_review">Viết đánh giá</string>
+    <string name="show_all_review">Toàn bộ đánh giá</string>
+
+
+    <string name="thong_tin_tai_khoan">Tài khoản</string>
+    <string name="cua_toi">Của tôi</string>
+    <string name="luot_ghim">Lượt ghim</string>
+    <string name="chinh_sua">Chỉnh sửa</string>
+    <string name="luu">Lưu</string>
+    <string name="gioi_tinh">Giới tính:</string>
+    <string name="ten_hien_thi">Tên hiển thị:</string>
+    <string name="mat_khau">Mật khẩu:</string>
+    <string name="email">Email:</string>
+    <string name="so_dien_thoai">Số điện thoại:</string>
+    <string name="moi_nhat">Mới nhất</string>
+    <string name="gan_toi">Gần tôi</string>
+    <string name="pho_bien">Phổ biến</string>
+    <string name="danh_muc">Danh mục</string>
+    <string name="tin_nhan">Tin nhắn</string>
+    <string name="trang_chu">Trang chủ</string>
+    <string name="raijin_thunderkeg">Raijin \"1918\" Thunderkeg</string>
+    <string name="bai_ghim">Bài ghim</string>
+    <string name="hom_thu">Hòm thư</string>
+    <string name="thong_bao">Thông báo</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="loc_theo_khu_vuc">Lọc theo khu vực</string>
+    <string name="loc_theo_muc">Lọc theo mục</string>
+    <string name="chon_danh_muc">Chọn danh mục</string>
+    <string name="chon_tinh_thanh">Chọn tỉnh thành</string>
+    <string name="khao_sat">Khảo sát</string>
+    <string name="facebook_fanpage">Fanpage</string>
+</resources>

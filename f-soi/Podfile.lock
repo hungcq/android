@@ -1,0 +1,27 @@
+PODS:
+  - GoogleMaps (2.1.1):
+    - GoogleMaps/Maps (= 2.1.1)
+  - GoogleMaps/Base (2.1.1)
+  - GoogleMaps/Maps (2.1.1):
+    - GoogleMaps/Base
+  - JSONModel (1.7.0)
+  - REFrostedViewController (2.4.8)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - JSONModel
+  - REFrostedViewController (~> 2.4)
+  - SDWebImage (~> 3.8)
+
+SPEC CHECKSUMS:
+  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: 64e5d7738f8e24a75fb4aa66e31c421c6a506d61
+
+COCOAPODS: 1.2.0

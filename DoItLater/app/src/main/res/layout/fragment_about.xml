@@ -1,0 +1,137 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="raijin.doitlater.fragments.About">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="App Info"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:id="@+id/tv_appinfo"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tv_appinfo"
+            android:id="@+id/ly_1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App name"
+                android:textSize="@dimen/normal_text_size"
+                android:padding="@dimen/activity_horizontal_margin"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do It Later"
+                android:gravity="right"
+                android:textSize="@dimen/tiny_text_size"
+                android:padding="@dimen/activity_horizontal_margin"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ly_1"
+            android:id="@+id/ly_2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version"
+                android:textSize="@dimen/normal_text_size"
+                android:padding="@dimen/activity_horizontal_margin"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1.0.0"
+                android:gravity="right"
+                android:textSize="@dimen/tiny_text_size"
+                android:padding="@dimen/activity_horizontal_margin"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ly_2"
+            android:id="@+id/ly_3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Build date"
+                android:textSize="@dimen/normal_text_size"
+                android:padding="@dimen/activity_horizontal_margin"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="17/9/2016"
+                android:gravity="right"
+                android:textSize="@dimen/tiny_text_size"
+                android:padding="@dimen/activity_horizontal_margin"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_height="1dp"
+            android:background="#8b8b8b"
+            android:id="@+id/v_1"
+            android:layout_below="@id/ly_3"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Authors Info"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:layout_below="@id/v_1"
+            android:id="@+id/atinfo" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Raijin '1918' Thunderkeg"
+            android:textSize="@dimen/normal_text_size"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_below="@id/atinfo"
+            android:id="@+id/at_1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Qk Lahpita"
+            android:textSize="@dimen/normal_text_size"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_below="@id/at_1"
+            android:id="@+id/at_2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More Jump"
+            android:textSize="@dimen/normal_text_size"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_below="@id/at_2"
+            android:id="@+id/at_3"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Copyright © Team Nyet Pidor"
+            android:gravity="center"
+            android:textSize="@dimen/tiny_text_size"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="40dp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

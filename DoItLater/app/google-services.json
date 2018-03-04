@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "17637003385",
+    "firebase_url": "https://doitlater05.firebaseio.com",
+    "project_id": "doitlater05",
+    "storage_bucket": "doitlater05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17637003385:android:d42404982d3b2b21",
+        "android_client_info": {
+          "package_name": "raijin.doitlater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17637003385-c8tbtp6nvfdkal0d5rpt79m2oajrgqm8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "raijin.doitlater",
+            "certificate_hash": "877DAC59C8CBB3DAEAE9DA48BC6A5E6D44957100"
+          }
+        },
+        {
+          "client_id": "17637003385-ev8shu06ouf8qfsj7350hr4e1absiq3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx1I8vuwIARoRdyDY_kEoejpBIfhVkMk4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17637003385-ev8shu06ouf8qfsj7350hr4e1absiq3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

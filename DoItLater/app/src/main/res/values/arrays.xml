@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="theme_color_array">
+        <item>Default</item>
+        <item>Purple</item>
+        <item>Teal</item>
+        <item>Grey</item>
+        <item>Orange</item>
+        <item>Pink</item>
+    </string-array>
+
+    <string-array name="theme_color_key_array">
+        <item>theme_default</item>
+        <item>theme_purple</item>
+        <item>theme_teal</item>
+        <item>theme_grey</item>
+        <item>theme_orange</item>
+        <item>theme_pink</item>
+    </string-array>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_add_more"
+        android:icon="@drawable/ic_playlist_add_white_24dp"
+        android:title="@string/add_more_action"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/item_addnote_location"
+                android:title="Add Location" />
+            <item
+                android:id="@+id/item_addnote_record"
+                android:title="Add Record" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_save"
+        android:icon="@drawable/ic_save_white_24dp"
+        android:title="@string/save_action"
+        app:showAsAction="always" />
+</menu>

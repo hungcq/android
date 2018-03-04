@@ -1,0 +1,103 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40000000"
+    android:clickable="true"
+    android:paddingTop="@dimen/_200sdp"
+    tools:context="com.online.foodplus.fragments.FilterMainFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/colorMain"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_back"
+                    style="@style/SelectableBackground"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:src="@drawable/ic_clear_filter" />
+
+                <ImageView
+                    android:id="@+id/image_check"
+                    style="@style/SelectableBackground"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:src="@drawable/ic_checkmark" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/loc_theo_khu_vuc"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_12sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Grey400" />
+
+        <com.online.foodplus.widgets.FilterItem
+            android:id="@+id/filter_item_city"
+            style="@style/SelectableBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:content="@string/chon_tinh_thanh"
+            app:icon="@drawable/ic_city_picker" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Grey400" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/loc_theo_muc"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_12sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Grey400" />
+
+        <com.online.foodplus.widgets.FilterItem
+            android:id="@+id/filter_item_category"
+            style="@style/SelectableBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:content="@string/chon_danh_muc"
+            app:icon="@drawable/ic_category_picker" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Grey400" />
+
+    </LinearLayout>
+
+</FrameLayout>

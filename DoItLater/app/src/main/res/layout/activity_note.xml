@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.NoteActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/child_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.AppBarOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/title_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_for_note"
+                android:gravity="start"
+                android:hint="Title"
+                android:padding="16dp"
+                android:textSize="@dimen/large_text_size" />
+
+            <LinearLayout
+                android:id="@+id/location_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/location_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/custom_edit_text_for_note"
+                    android:gravity="center_vertical"
+                    android:hint="Location"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <Button
+                    android:id="@+id/show_on_map_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_directions_white_48dp"
+                    android:paddingLeft="9dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recordAudio_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btn_Record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_fiber_manual_record_white_48dp"
+                    android:paddingLeft="3dp"
+                    android:text="Record" />
+
+                <Button
+                    android:id="@+id/btn_Play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_play_arrow_white_48dp"
+                    android:text="Play" />
+
+                <Button
+                    android:id="@+id/btn_Stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_stop_white_48dp"
+                    android:text="Stop" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/detail_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_for_note"
+                android:gravity="start"
+                android:hint="Details"
+                android:padding="16dp"
+                android:textSize="@dimen/normal_text_size" />
+
+            <TextView
+                android:id="@+id/tv_reminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="#d1d1d1"
+                android:padding="16dp"
+                android:text="Reminder: None" />
+
+            <RelativeLayout
+                android:id="@+id/image_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/image_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d1d1d1"
+                    android:padding="16dp"
+                    android:text="Image: None" />
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_text"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="300dp"
+                    android:scaleType="fitCenter" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Priority"
+                android:textSize="@dimen/normal_text_size" />
+
+            <RadioGroup
+                android:id="@+id/rb_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <RadioButton
+                    android:id="@+id/rb_priority_low"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Low"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/rb_priority_normal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Normal"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/rb_priority_high"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="High"></RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

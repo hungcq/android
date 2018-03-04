@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <string name="path_main">http://test.bigvn.net/idtv/connect/homepage.php</string>
+        <string name="path_category">http://test.bigvn.net/idtv/connect/category.php</string>
+        <string name="path_detail">http://test.bigvn.net/idtv/foodplus/detail</string>
+
+        <string name="path_user_login">http://test.bigvn.net/idtv/foodplus/user/login</string>
+        <string name="path_user_register">http://test.bigvn.net/idtv/foodplus/user/register</string>
+        <string name="path_user_request_token">http://test.bigvn.net/idtv/foodplus/user/request_token</string>
+        <string name="path_find">http://test.bigvn.net/idtv/foodplus/search</string>
+        <string name="path_category_new">http://test.bigvn.net/idtv/foodplus/category</string>
+        <string name="path_comment">http://test.bigvn.net/idtv/foodplus/comment</string>
+        <string name="path_comment_send">http://test.bigvn.net/idtv/foodplus/comment/send</string>-->
+    <string name="path_survey">http://test.bigvn.net/idtv/foodplus/feedback/survey</string>
+    <string name="path_survey_save">http://test.bigvn.net/idtv/foodplus/feedback/save_survey</string>
+
+    <string name="api_main">http://api.xplay.vn/api/mainscr</string>
+    <string name="api_list_city">http://api.xplay.vn/api/cityserv?t=0</string>
+    <string name="api_category">http://api.xplay.vn/api/productsrv</string>
+    <string name="api_user_srv">http://api.xplay.vn/api/usersrv</string>
+    <string name="api_search">http://api.xplay.vn/api/searchsrv</string>
+    <string name="api_detail">http://api.xplay.vn/api/detail</string>
+    <string name="api_votesrv">http://api.xplay.vn/api/votesrv</string>
+    <string name="api_comsrv">http://api.xplay.vn/api/comsrv</string>
+    <string name="api_mapsrv">http://api.xplay.vn/api/mapsrv</string>
+    <string name="api_eventsrv">http://api.xplay.vn/api/eventsrv</string>
+    <string name="api_pinsrv">http://api.xplay.vn/api/pinsrv</string>
+    <string name="api_catsrv">http://api.xplay.vn/api/catsrv</string>
+
+    <string name="facebook_fanpage_url">https://www.facebook.com/FoodPlus.vnn</string>
+    <string name="facebook_fanpage_id">FoodPlus.vnn</string>
+</resources>

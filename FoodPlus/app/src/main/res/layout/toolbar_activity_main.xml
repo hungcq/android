@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_47sdp"
+    android:background="@color/colorMain"
+    app:contentInsetStart="0dp"
+    app:contentInsetLeft="0dp"
+    app:layout_collapseMode="pin"
+    app:layout_scrollFlags="scroll|enterAlways">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/logo"
+            android:layout_marginLeft="@dimen/_12sdp"/>
+
+        <TextView
+            android:id="@+id/tvToolbarTitle"
+            style="@style/WhiteBoldTextViewBig"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_menu_toolbar"
+            style="@style/SelectableBackground"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:src="@drawable/ic_menu_white" />
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            style="@style/SelectableBackground"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/img_menu_toolbar"
+            android:layout_alignTop="@+id/img_menu_toolbar"
+            android:layout_toLeftOf="@+id/img_menu_toolbar"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:src="@drawable/ic_search_white" />
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

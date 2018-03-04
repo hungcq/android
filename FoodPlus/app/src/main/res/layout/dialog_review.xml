@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:background="@drawable/bg_round_grey_light"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eee"
+        android:orientation="horizontal"
+        android:padding="@dimen/_7sdp">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgFeature"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/placeholder"
+            app:civ_border_width="0dp">
+        </com.mikhaellopez.circularimageview.CircularImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:id="@+id/tvTitle"
+                style="@style/textTitle"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvDescription"
+                style="@style/textDescription"
+                android:textSize="@dimen/_11sdp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_13sdp"
+        android:paddingRight="@dimen/_13sdp"
+        android:paddingTop="@dimen/_13sdp">
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:rating="5"
+            android:stepSize="1.0"/>
+
+        <ImageView
+            android:id="@+id/imgSmile"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_13sdp"
+            android:src="@drawable/ic_smile_grey"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_white"
+            android:hint="Tiêu đề"
+            android:inputType="text"
+            android:id="@+id/etTitle"
+            android:lines="1"
+            android:maxLines="1"
+            android:padding="@dimen/_7sdp"
+            android:singleLine="true"
+            android:textSize="@dimen/_12sdp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_white"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="top|left"
+            android:hint="Nội dung"
+            android:inputType="textMultiLine"
+            android:id="@+id/etContent"
+            android:lines="4"
+            android:maxLines="6"
+            android:padding="@dimen/_7sdp"
+            android:scrollbars="vertical"
+            android:textSize="@dimen/_12sdp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@null"
+            android:fontFamily="sans-serif"
+            android:text="ĐÓNG"
+            android:textColor="@color/eventIconColor"
+            android:textSize="@dimen/_12sdp"/>
+
+        <Button
+            android:id="@+id/bSend"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@null"
+            android:fontFamily="sans-serif"
+            android:text="GỬI"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_12sdp"/>
+
+    </LinearLayout>
+</LinearLayout>

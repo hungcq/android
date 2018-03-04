@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "599677436311",
+    "firebase_url": "https://foodplus-153209.firebaseio.com",
+    "project_id": "foodplus-153209",
+    "storage_bucket": "foodplus-153209.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599677436311:android:c4f48fcb755df57f",
+        "android_client_info": {
+          "package_name": "com.online.foodplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599677436311-45opjrlefjgmh0na4r5e14fudo0tonjv.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "599677436311-equn0qkutd13fp0lv12s2l8c3ncc88bu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_h7f3ZxaH5dOJFRyw2vFvK4746aNPjaM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
